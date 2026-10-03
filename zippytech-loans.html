@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Check your perfect bank | Zippytech Systems - Loan Guidance Hyderabad</title>
+  <meta name="description" content="One place to compare loan options from multiple banks and financial institutions, based on your profile and eligibility in Hyderabad. Home, Plot, LAP, Personal & Business Loans.">
+  <meta name="keywords" content="loan guidance Hyderabad, plot loans Hyderabad, home loans, LAP, personal loans, business loans, Zippytech Systems">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS Design System & Modern Tokens
+       ========================================================================== */
+    :root {
+      --bg-main: #090d16;
+      --bg-surface: #111726;
+      --bg-surface-elevated: #182035;
+      --bg-card: rgba(23, 32, 53, 0.75);
+      --bg-card-hover: rgba(30, 42, 69, 0.9);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(59, 130, 246, 0.35);
+      --border-glow: rgba(16, 185, 129, 0.4);
+      
+      --primary: #2563eb;
+      --primary-glow: #3b82f6;
+      --success: #10b981;
+      --success-glow: #34d399;
+      --whatsapp: #25D366;
+      --whatsapp-hover: #20bd5a;
+      --accent-gold: #f59e0b;
+      --accent-gold-glow: #fbbf24;
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-subtle: #64748b;
+      
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-telugu: 'Noto Sans Telugu', 'Plus Jakarta Sans', sans-serif;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+      
+      --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.45), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 30px -5px rgba(37, 99, 235, 0.25);
+      --shadow-wa: 0 8px 24px -4px rgba(37, 211, 102, 0.35);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      color-scheme: dark;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 90px; /* Space for mobile sticky CTA bar */
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, select {
+      font-family: inherit;
+      border: none;
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 580px; /* Perfect poster-width for mobile-first experience */
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 860px;
+        padding: 24px;
+      }
+    }
+
+    /* ==========================================================================
+       Header & Brand Bar
+       ========================================================================== */
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: rgba(17, 23, 38, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #2563eb, #10b981);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 20px;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .brand-name span {
+      color: var(--primary-glow);
+    }
+
+    .header-badge {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--success-glow);
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .header-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--success);
+      display: inline-block;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.4); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    /* ==========================================================================
+       Hero Poster Section
+       ========================================================================== */
+    .hero-poster {
+      position: relative;
+      background: linear-gradient(175deg, rgba(24, 32, 53, 0.95) 0%, rgba(17, 23, 38, 0.95) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 28px 20px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .hero-poster::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #93c5fd;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+    }
+
+    .hero-headline {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (min-width: 480px) {
+      .hero-headline {
+        font-size: 38px;
+      }
+    }
+
+    .hero-subtext {
+      font-size: 14.5px;
+      line-height: 1.45;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Telugu Highlight Banner */
+    .telugu-banner {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(234, 88, 12, 0.08) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .telugu-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .telugu-text {
+      font-family: var(--font-telugu);
+      font-size: 14px;
+      font-weight: 600;
+      color: #fde68a;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    /* Primary Hero CTA Group */
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (min-width: 480px) {
+      .hero-cta-group {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .btn-whatsapp-hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #25D366, #1fad53);
+      color: #ffffff;
+      font-size: 15.5px;
+      font-weight: 700;
+      padding: 14px 22px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-wa);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-whatsapp-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px -3px rgba(37, 211, 102, 0.45);
+    }
+
+    .btn-call-hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 20px;
+      border-radius: var(--radius-lg);
+      transition: all 0.2s ease;
+    }
+
+    .btn-call-hero:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Trust Highlights Strip */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border-subtle);
+    }
+
+    @media (min-width: 540px) {
+      .trust-strip {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      text-align: left;
+    }
+
+    .trust-item span.icon {
+      color: var(--success);
+      font-size: 14px;
+    }
+
+    /* ==========================================================================
+       Loan Products Grid Section
+       ========================================================================== */
+    .section-header {
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Filter Chips */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-chip {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 14px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      color: var(--text-muted);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-chip.active, .filter-chip:hover {
+      background: rgba(37, 99, 235, 0.2);
+      border-color: var(--primary-glow);
+      color: #ffffff;
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 480px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .loan-card {
+      position: relative;
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      box-shadow: var(--shadow-card);
+    }
+
+    .loan-card:hover {
+      transform: translateY(-3px);
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.5), 0 0 20px -3px rgba(37, 99, 235, 0.2);
+    }
+
+    /* Featured Plot Loan Card */
+    .loan-card.featured-plot {
+      background: linear-gradient(160deg, rgba(23, 32, 53, 0.9) 0%, rgba(35, 30, 20, 0.85) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .card-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+
+    .loan-card.featured-plot .card-icon-wrap {
+      background: rgba(245, 158, 11, 0.18);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+
+    .card-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-plot {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fde68a;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+
+    .badge-popular {
+      background: rgba(16, 185, 129, 0.15);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-speed {
+      background: rgba(59, 130, 246, 0.15);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .badge-sub {
+      background: rgba(148, 163, 184, 0.12);
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 5px;
+      line-height: 1.25;
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .card-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-glow);
+    }
+
+    .loan-card:hover .card-action {
+      color: var(--success-glow);
+    }
+
+    .card-action span.arrow {
+      transition: transform 0.2s ease;
+    }
+
+    .loan-card:hover .card-action span.arrow {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================================
+       Interactive Poster Tool: Quick Eligibility & EMI Calculator
+       ========================================================================== */
+    .calculator-card {
+      background: linear-gradient(165deg, #131a2e 0%, #0d1220 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 22px 18px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .calc-header {
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .calc-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .calc-subtitle {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .calc-control {
+      margin-bottom: 16px;
+    }
+
+    .calc-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .calc-val-badge {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--primary-glow);
+      background: rgba(37, 99, 235, 0.12);
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .calc-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 4px;
+      background: #1e293b;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary-glow);
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+    }
+
+    .calc-result-box {
+      background: rgba(17, 24, 39, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .calc-emi-title {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .calc-emi-amount {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--success-glow);
+    }
+
+    .calc-share-btn {
+      width: 100%;
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      border-radius: var(--radius-md);
+      color: #4ade80;
+      font-size: 13.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .calc-share-btn:hover {
+      background: rgba(37, 211, 102, 0.2);
+    }
+
+    /* ==========================================================================
+       Fast WhatsApp Inquiry Form (Poster Lead-Capture)
+       ========================================================================== */
+    .lead-form-card {
+      background: linear-gradient(160deg, #131b2e 0%, #101626 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-xl);
+      padding: 22px 18px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .form-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .form-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 5px;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 12px 14px;
+      background: #0b101c;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      color: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--primary-glow);
+      background: #0f172a;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-submit-lead {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #25D366, #1fad53);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+      box-shadow: var(--shadow-wa);
+      transition: all 0.2s ease;
+    }
+
+    .btn-submit-lead:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -2px rgba(37, 211, 102, 0.45);
+    }
+
+    /* ==========================================================================
+       Why Zippytech Systems Feature Blocks
+       ========================================================================== */
+    .why-section {
+      margin-bottom: 30px;
+    }
+
+    .features-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 520px) {
+      .features-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .feature-item {
+      background: rgba(17, 24, 39, 0.6);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .feature-icon {
+      font-size: 18px;
+      padding: 8px;
+      border-radius: 10px;
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--primary-glow);
+      flex-shrink: 0;
+    }
+
+    .feature-text h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .feature-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* ==========================================================================
+       Footer & Statutory Disclaimers
+       ========================================================================== */
+    .footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 24px 16px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-subtle);
+    }
+
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .footer-contact {
+      margin-bottom: 14px;
+      color: var(--text-muted);
+    }
+
+    .footer-contact a {
+      color: var(--primary-glow);
+      font-weight: 600;
+    }
+
+    .footer-disclaimer {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      line-height: 1.5;
+      color: #94a3b8;
+      max-width: 640px;
+      margin: 0 auto 14px;
+      font-size: 11.5px;
+      text-align: justify;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-subtle);
+    }
+
+    /* ==========================================================================
+       Mobile-First Sticky Bottom Action Bar
+       ========================================================================== */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(13, 18, 30, 0.95);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 10px 16px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (min-width: 768px) {
+      .sticky-bar {
+        max-width: 540px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 14px;
+        border-radius: var(--radius-full);
+        border: 1px solid var(--border-accent);
+      }
+    }
+
+    .sticky-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sticky-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .sticky-number {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sticky-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-sticky-call {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-subtle);
+      color: #ffffff;
+      font-size: 18px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-sticky-wa {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #25D366, #1fad53);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-wa);
+      transition: all 0.2s ease;
+    }
+
+    .btn-sticky-wa:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 1. Header Bar with Brand -->
+    <header class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">Z</div>
+        <div class="brand-name">Zippytech <span>Systems</span></div>
+      </div>
+      <div class="header-badge">
+        Loan Guidance
+      </div>
+    </header>
+
+    <!-- 2. Hero Poster Section -->
+    <section class="hero-poster">
+      <div class="hero-content">
+        <div class="hero-pill">
+          ⚡ Multi-Institution Loan Advisory • Hyderabad
+        </div>
+        
+        <h1 class="hero-headline">Check your perfect bank</h1>
+        
+        <p class="hero-subtext">
+          One place to compare loan options from multiple banks and financial institutions, based on your profile and eligibility.
+        </p>
+
+        <!-- Telugu Highlight Line -->
+        <div class="telugu-banner">
+          <div class="telugu-icon">💡</div>
+          <div class="telugu-text">
+            మీ profile & eligibility ఆధారంగా సరైన bank loan తెలుసుకోండి!
+          </div>
+        </div>
+
+        <!-- Contact Button -->
+        <div class="hero-cta-group">
+          <a href="https://wa.me/916302690251?text=Hi%20Zippytech%20Systems,%20I%20want%20to%20check%20my%20loan%20options%20and%20eligibility." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-hero" id="hero-wa-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.185 1.564 5.938l-1.564 5.714 5.867-1.539c1.677.915 3.597 1.437 5.633 1.437 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
+            </svg>
+            Call / WhatsApp (63026 90251)
+          </a>
+          <a href="tel:+916302690251" class="btn-call-hero" id="hero-call-btn">
+            📞 Direct Call: 63026 90251
+          </a>
+        </div>
+
+        <!-- Trust Badges Strip -->
+        <div class="trust-strip">
+          <div class="trust-item"><span class="icon">✓</span> Free Guidance</div>
+          <div class="trust-item"><span class="icon">✓</span> Multi-Lender</div>
+          <div class="trust-item"><span class="icon">✓</span> Doorstep Visit</div>
+          <div class="trust-item"><span class="icon">✓</span> Hyderabad Local</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Loan Types to List (Grid of Short Cards) -->
+    <section class="products-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>📋</span> Compare Loan Categories
+        </h2>
+        <p class="section-subtitle">
+          Explore options tailored to your income, property status, and financial goals.
+        </p>
+      </div>
+
+      <!-- Quick Filter Chips -->
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-chip active" data-filter="all">All Loans (15)</button>
+        <button class="filter-chip" data-filter="property">Property & Plots</button>
+        <button class="filter-chip" data-filter="business">Business & MSME</button>
+        <button class="filter-chip" data-filter="personal">Personal & Quick</button>
+        <button class="filter-chip" data-filter="special">Special / Allied*</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+
+        <!-- 1. Home Loans -->
+        <div class="loan-card" data-category="property" onclick="inquireLoan('Home Loan')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🏠</div>
+              <span class="card-badge badge-popular">Popular</span>
+            </div>
+            <h3 class="card-title">Home Loans</h3>
+            <p class="card-desc">For purchase of ready, under-construction apartments, independent houses & resale villas.</p>
+          </div>
+          <div class="card-action">
+            <span>Check Eligibility</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 2. Plot Loans (Hyderabad plots) - FEATURED -->
+        <div class="loan-card featured-plot" data-category="property" onclick="inquireLoan('Plot Loan (Hyderabad Plots)')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">📐</div>
+              <span class="card-badge badge-plot">🔥 Hyderabad Special</span>
+            </div>
+            <h3 class="card-title">Plot Loans (Hyderabad plots)</h3>
+            <p class="card-desc">Finance for HMDA & DTCP approved layout plots across Warangal Hwy, Ghatkesar, Boduppal & Uppal.</p>
+          </div>
+          <div class="card-action">
+            <span style="color: #fbbf24;">Check Plot Approval</span>
+            <span class="arrow" style="color: #fbbf24;">→</span>
+          </div>
+        </div>
+
+        <!-- 3. Loan Against Property (LAP) -->
+        <div class="loan-card" data-category="property" onclick="inquireLoan('Loan Against Property (LAP)')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🏢</div>
+              <span class="card-badge badge-popular">High Value</span>
+            </div>
+            <h3 class="card-title">Loan Against Property (LAP)</h3>
+            <p class="card-desc">Unlock high-value liquidity against your residential house, commercial property, or titled plot.</p>
+          </div>
+          <div class="card-action">
+            <span>Check Value & Tenure</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 4. Personal Loans -->
+        <div class="loan-card" data-category="personal" onclick="inquireLoan('Personal Loan')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">⚡</div>
+              <span class="card-badge badge-speed">Fast 24h</span>
+            </div>
+            <h3 class="card-title">Personal Loans</h3>
+            <p class="card-desc">Collateral-free, instant paperless digital loans for salaried MNC, IT, PSU & Corporate staff.</p>
+          </div>
+          <div class="card-action">
+            <span>Check Instant Limit</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 5. Business Loans -->
+        <div class="loan-card" data-category="business" onclick="inquireLoan('Business Loan')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">💼</div>
+              <span class="card-badge badge-speed">Working Capital</span>
+            </div>
+            <h3 class="card-title">Business Loans</h3>
+            <p class="card-desc">Custom working capital and business expansion funding based on GST turnover and banking credits.</p>
+          </div>
+          <div class="card-action">
+            <span>Check Business Limit</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 6. MSME / Business Loans -->
+        <div class="loan-card" data-category="business" onclick="inquireLoan('MSME / Business Loan')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🏭</div>
+              <span class="card-badge badge-popular">MSME Udyam</span>
+            </div>
+            <h3 class="card-title">MSME / Business Loans</h3>
+            <p class="card-desc">Financing for manufacturers, traders, and workshop units in Nacharam, Mallapur & industrial belts.</p>
+          </div>
+          <div class="card-action">
+            <span>Compare MSME Rates</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 7. Vehicle Loans -->
+        <div class="loan-card" data-category="personal" onclick="inquireLoan('Vehicle Loan')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🚗</div>
+              <span class="card-badge badge-speed">Low EMI</span>
+            </div>
+            <h3 class="card-title">Vehicle Loans</h3>
+            <p class="card-desc">Attractive financing options for new and pre-owned four-wheelers with flexible repayment terms.</p>
+          </div>
+          <div class="card-action">
+            <span>Calculate Car EMI</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 8. Credit Cards -->
+        <div class="loan-card" data-category="personal" onclick="inquireLoan('Credit Cards')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">💳</div>
+              <span class="card-badge badge-speed">Instant Pre-Check</span>
+            </div>
+            <h3 class="card-title">Credit Cards</h3>
+            <p class="card-desc">Find pre-approved, lifetime-free and premium reward credit cards tailored to your credit profile.</p>
+          </div>
+          <div class="card-action">
+            <span>Check Card Offers</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 9. Construction Loans -->
+        <div class="loan-card" data-category="property" onclick="inquireLoan('Construction Loan')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🏗️</div>
+              <span class="card-badge badge-popular">Stage Disbursal</span>
+            </div>
+            <h3 class="card-title">Construction Loans</h3>
+            <p class="card-desc">Stage-wise funding to construct your dream independent house or duplex on your existing land.</p>
+          </div>
+          <div class="card-action">
+            <span>Check Stage Estimate</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 10. Home Renovation Loans -->
+        <div class="loan-card" data-category="property" onclick="inquireLoan('Home Renovation Loan')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🛋️</div>
+              <span class="card-badge badge-speed">Interiors</span>
+            </div>
+            <h3 class="card-title">Home Renovation Loans</h3>
+            <p class="card-desc">Upgrade your home, complete modular kitchen & woodwork, or extend additional floors easily.</p>
+          </div>
+          <div class="card-action">
+            <span>Check Renovation Fund</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 11. Balance Transfer -->
+        <div class="loan-card" data-category="property" onclick="inquireLoan('Balance Transfer')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🔄</div>
+              <span class="card-badge badge-popular">EMI Saver</span>
+            </div>
+            <h3 class="card-title">Balance Transfer</h3>
+            <p class="card-desc">Transfer your high-interest existing loan to a lower repo-linked rate and save thousands monthly.</p>
+          </div>
+          <div class="card-action">
+            <span>Calculate Monthly Savings</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 12. Top-Up Loans -->
+        <div class="loan-card" data-category="property" onclick="inquireLoan('Top-Up Loan')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">📈</div>
+              <span class="card-badge badge-speed">Quick Liquidity</span>
+            </div>
+            <h3 class="card-title">Top-Up Loans</h3>
+            <p class="card-desc">Get extra cash over and above your running home loan with zero additional collateral required.</p>
+          </div>
+          <div class="card-action">
+            <span>Check Top-Up Amount</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 13. Agriculture Loans* -->
+        <div class="loan-card" data-category="special" onclick="inquireLoan('Agriculture Loan*')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🌾</div>
+              <span class="card-badge badge-sub">*Conditional</span>
+            </div>
+            <h3 class="card-title">Agriculture Loans*</h3>
+            <p class="card-desc">Credit facilities for agricultural needs, farm equipment & rural credit (*subject to availability).</p>
+          </div>
+          <div class="card-action">
+            <span>Inquire Availability</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 14. Education Loans* -->
+        <div class="loan-card" data-category="special" onclick="inquireLoan('Education Loan*')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">🎓</div>
+              <span class="card-badge badge-sub">*Conditional</span>
+            </div>
+            <h3 class="card-title">Education Loans*</h3>
+            <p class="card-desc">Higher study loans for prestigious domestic universities and overseas degrees (*subject to availability).</p>
+          </div>
+          <div class="card-action">
+            <span>Inquire Availability</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+        <!-- 15. Consumer Loans* -->
+        <div class="loan-card" data-category="special" onclick="inquireLoan('Consumer Loan*')">
+          <div>
+            <div class="card-top">
+              <div class="card-icon-wrap">📱</div>
+              <span class="card-badge badge-sub">*Conditional</span>
+            </div>
+            <h3 class="card-title">Consumer Loans*</h3>
+            <p class="card-desc">Financing options for durable home electronics and appliances (*subject to availability).</p>
+          </div>
+          <div class="card-action">
+            <span>Inquire Availability</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Interactive EMI & Loan Planner -->
+    <section class="calculator-card">
+      <div class="calc-header">
+        <h2 class="calc-title">
+          <span>🧮</span> Quick EMI Estimator
+        </h2>
+        <p class="calc-subtitle">Adjust the sliders to estimate monthly repayments instantly.</p>
+      </div>
+
+      <!-- Loan Amount -->
+      <div class="calc-control">
+        <div class="calc-label-row">
+          <span>Loan Amount</span>
+          <span class="calc-val-badge" id="amt-val">₹ 35,00,000</span>
+        </div>
+        <input type="range" class="calc-slider" id="amt-slider" min="100000" max="15000000" step="50000" value="3500000">
+      </div>
+
+      <!-- Interest Rate -->
+      <div class="calc-control">
+        <div class="calc-label-row">
+          <span>Tentative Interest Rate (p.a.)</span>
+          <span class="calc-val-badge" id="roi-val">8.75%</span>
+        </div>
+        <input type="range" class="calc-slider" id="roi-slider" min="8.0" max="16.0" step="0.25" value="8.75">
+      </div>
+
+      <!-- Tenure -->
+      <div class="calc-control">
+        <div class="calc-label-row">
+          <span>Loan Tenure (Years)</span>
+          <span class="calc-val-badge" id="tenure-val">20 Years</span>
+        </div>
+        <input type="range" class="calc-slider" id="tenure-slider" min="1" max="30" step="1" value="20">
+      </div>
+
+      <!-- Calculated Output -->
+      <div class="calc-result-box">
+        <div>
+          <div class="calc-emi-title">Estimated Monthly EMI</div>
+          <div class="calc-emi-amount" id="emi-output">₹ 30,936</div>
+        </div>
+        <div style="text-align: right; font-size: 11px; color: var(--text-muted);">
+          Indicative calculation<br>Subject to bank sanction
+        </div>
+      </div>
+
+      <button class="calc-share-btn" onclick="shareCalculation()">
+        💬 Send this EMI Calculation to WhatsApp
+      </button>
+    </section>
+
+    <!-- 5. 1-Minute Eligibility Inquiry Form -->
+    <section class="lead-form-card" id="inquiry-form-section">
+      <div class="form-header">
+        <h2 class="form-title">📝 Check Your Eligibility</h2>
+        <p class="form-subtitle">Fill these basic details to receive doorstep comparison from multiple institutions.</p>
+      </div>
+
+      <form id="loan-inquiry-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="user-name">Your Full Name</label>
+          <input type="text" class="form-input" id="user-name" placeholder="e.g. Ramesh Kumar" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="user-phone">Mobile Number</label>
+          <input type="tel" class="form-input" id="user-phone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="loan-type-select">Loan Category</label>
+          <select class="form-select" id="loan-type-select" required>
+            <option value="Plot Loan (Hyderabad plots)">Plot Loan (Hyderabad plots)</option>
+            <option value="Home Loan" selected>Home Loan</option>
+            <option value="Loan Against Property (LAP)">Loan Against Property (LAP)</option>
+            <option value="Personal Loan">Personal Loan</option>
+            <option value="Business Loan">Business Loan</option>
+            <option value="MSME / Business Loan">MSME / Business Loan</option>
+            <option value="Construction Loan">Construction Loan</option>
+            <option value="Home Renovation Loan">Home Renovation Loan</option>
+            <option value="Balance Transfer">Balance Transfer</option>
+            <option value="Top-Up Loan">Top-Up Loan</option>
+            <option value="Vehicle Loan">Vehicle Loan</option>
+            <option value="Credit Cards">Credit Cards</option>
+            <option value="Agriculture Loan*">Agriculture Loan*</option>
+            <option value="Education Loan*">Education Loan*</option>
+            <option value="Consumer Loan*">Consumer Loan*</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="user-area">Location / City in Hyderabad</label>
+          <input type="text" class="form-input" id="user-area" placeholder="e.g. Habsiguda, Uppal, Ghatkesar" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="user-income">Monthly In-Hand Income / Turnover</label>
+          <input type="text" class="form-input" id="user-income" placeholder="e.g. ₹65,000 / month" required>
+        </div>
+
+        <button type="submit" class="btn-submit-lead" id="submit-inquiry-btn">
+          <span>📲</span> Connect with Guidance Advisor on WhatsApp
+        </button>
+      </form>
+    </section>
+
+    <!-- 6. Why Choose Zippytech Systems -->
+    <section class="why-section">
+      <div class="section-header">
+        <h2 class="section-title">✨ Why Choose Zippytech Systems?</h2>
+        <p class="section-subtitle">Local expertise, objective comparison, zero confusion.</p>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">🔍</div>
+          <div class="feature-text">
+            <h4>Multi-Lender Comparison</h4>
+            <p>We match your profile against various lending criteria to locate the right fit for your budget.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">📐</div>
+          <div class="feature-text">
+            <h4>Hyderabad Plot Expertise</h4>
+            <p>Specialized assistance in evaluating HMDA, DTCP, and LRS approval requirements before you apply.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🚪</div>
+          <div class="feature-text">
+            <h4>Doorstep Document Service</h4>
+            <p>Save hours of branch waiting time with physical document assistance across East & Greater Hyderabad.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-text">
+            <h4>100% Transparent Process</h4>
+            <p>No unexpected charges, no cash handovers. Official payments handled directly with lending institutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Footer & Mandatory Regulatory Disclaimer -->
+    <footer class="footer">
+      <div class="footer-brand">Zippytech Systems</div>
+      <div class="footer-contact">
+        Call / WhatsApp: <a href="https://wa.me/916302690251">63026 90251</a> • Habsiguda & Greater Hyderabad
+      </div>
+
+      <!-- Required Statutory Disclaimer -->
+      <div class="footer-disclaimer">
+        <strong>Disclaimer:</strong> Zippytech Systems is a loan guidance service and is not a bank. Loan approval, interest rate, amount and eligibility are subject to the respective bank/financial institution's terms and approval.
+      </div>
+
+      <div class="footer-copy">
+        &copy; <span id="current-year">2026</span> Zippytech Systems. All rights reserved.
+      </div>
+    </footer>
+
+  </div><!-- /container -->
+
+  <!-- 8. Mobile-First Sticky Bottom Call / WhatsApp Action Bar -->
+  <aside class="sticky-bar" aria-label="Quick Contact Bar">
+    <div class="sticky-info">
+      <span class="sticky-title">Need Loan Guidance?</span>
+      <span class="sticky-number">📞 63026 90251</span>
+    </div>
+    <div class="sticky-actions">
+      <a href="tel:+916302690251" class="btn-sticky-call" title="Direct Call" aria-label="Direct Call to 63026 90251">
+        📞
+      </a>
+      <a href="https://wa.me/916302690251?text=Hi%20Zippytech%20Systems,%20I%20would%20like%20to%20know%20my%20loan%20eligibility." target="_blank" rel="noopener noreferrer" class="btn-sticky-wa" id="sticky-wa-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.185 1.564 5.938l-1.564 5.714 5.867-1.539c1.677.915 3.597 1.437 5.633 1.437 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Interactive Logic
+       ========================================================================== -->
+  <script>
+    // Format Indian Rupees currency
+    function formatINR(number) {
+      return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        maximumFractionDigits: 0
+      }).format(number);
+    }
+
+    // Calculate Standard Reducing Balance EMI
+    function calculateEMI(principal, annualRate, tenureYears) {
+      const monthlyRate = annualRate / (12 * 100);
+      const totalMonths = tenureYears * 12;
+      const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      return Math.round(emi);
+    }
+
+    // DOM Elements for Calculator
+    const amtSlider = document.getElementById('amt-slider');
+    const roiSlider = document.getElementById('roi-slider');
+    const tenureSlider = document.getElementById('tenure-slider');
+    
+    const amtVal = document.getElementById('amt-val');
+    const roiVal = document.getElementById('roi-val');
+    const tenureVal = document.getElementById('tenure-val');
+    const emiOutput = document.getElementById('emi-output');
+
+    function updateCalculator() {
+      const principal = parseFloat(amtSlider.value);
+      const rate = parseFloat(roiSlider.value);
+      const tenure = parseInt(tenureSlider.value);
+
+      amtVal.textContent = formatINR(principal);
+      roiVal.textContent = rate.toFixed(2) + '%';
+      tenureVal.textContent = tenure + (tenure === 1 ? ' Year' : ' Years');
+
+      const emi = calculateEMI(principal, rate, tenure);
+      emiOutput.textContent = formatINR(emi);
+    }
+
+    amtSlider.addEventListener('input', updateCalculator);
+    roiSlider.addEventListener('input', updateCalculator);
+    tenureSlider.addEventListener('input', updateCalculator);
+
+    // Initial calculation trigger
+    updateCalculator();
+
+    // Share Calculation to WhatsApp
+    function shareCalculation() {
+      const principal = formatINR(amtSlider.value);
+      const rate = roiSlider.value + '%';
+      const tenure = tenureSlider.value + ' years';
+      const emi = emiOutput.textContent;
+
+      const message = `Hello Zippytech Systems, I checked my tentative EMI calculation:\n- Loan Amount: ${principal}\n- Interest Rate: ${rate}\n- Tenure: ${tenure}\n- Calculated EMI: ${emi}/month\n\nPlease let me know which banks offer this rate and my eligibility.`;
+      
+      const whatsappUrl = `https://wa.me/916302690251?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // Quick Inquiry from Loan Cards
+    function inquireLoan(loanName) {
+      // Pre-select loan category in the form
+      const select = document.getElementById('loan-type-select');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value === loanName) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      // Smooth scroll to inquiry form
+      const formSection = document.getElementById('inquiry-form-section');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Filter Chips Functionality
+    const filterButtons = document.querySelectorAll('.filter-chip');
+    const loanCards = document.querySelectorAll('.loan-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        loanCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Form Submission: Formats message and opens WhatsApp directly
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('user-name').value.trim();
+      const phone = document.getElementById('user-phone').value.trim();
+      const loanType = document.getElementById('loan-type-select').value;
+      const area = document.getElementById('user-area').value.trim();
+      const income = document.getElementById('user-income').value.trim();
+
+      const message = `Hi Zippytech Systems, I would like to check my loan eligibility:\n\n- Name: ${name}\n- Phone: ${phone}\n- Loan Category: ${loanType}\n- Location in Hyderabad: ${area}\n- Monthly Income/Turnover: ${income}\n\nPlease share suitable bank options and document requirements.`;
+
+      const whatsappUrl = `https://wa.me/916302690251?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // Set dynamic year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
