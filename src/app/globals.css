@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design Tokens & Color Palette
+   Brand: Official ICICI Bank Corporate Palette
+   Primary Brand: Deep Garnet Maroon (#851A1D / #621013)
+   Accent: Signature Tangerine / Saffron Orange (#F37021 / #D8580E)
+   Gold: Warm Amber (#D4AF37 / #F59E0B)
+   WhatsApp: #25D366 (Reserved ONLY for WhatsApp actions)
+   Backgrounds: Clean Bank Canvas (#F8FAFC) / Deep Banking Blue-Slate (#080E14)
+   ========================================================================== */
+
+:root {
+  /* Light Mode (Official ICICI Bank Canvas) */
+  --bg-primary: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #F1F5F9;
+  --bg-muted: #E2E8F0;
+  --bg-card: rgba(255, 255, 255, 0.96);
+  --bg-card-hover: rgba(255, 255, 255, 1);
+  
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --border-accent: #F37021;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
+  
+  /* Official ICICI Maroon Brand */
+  --brand-teal-deep: #851A1D;
+  --brand-teal: #851A1D;
+  --brand-teal-light: #F37021;
+  --brand-teal-subtle: rgba(243, 112, 33, 0.08);
+  
+  /* ICICI Signature Tangerine Orange */
+  --accent-saffron: #F37021;
+  --accent-saffron-hover: #D8580E;
+  --accent-saffron-light: #FED7AA;
+  --accent-saffron-subtle: rgba(243, 112, 33, 0.12);
+  
+  /* WhatsApp Green */
+  --whatsapp-green: #25D366;
+  --whatsapp-hover: #20bd5a;
+  --whatsapp-glow: rgba(37, 211, 102, 0.35);
+
+  /* Official ICICI Bank Brand Tokens */
+  --icici-maroon: #851A1D;
+  --icici-maroon-dark: #621013;
+  --icici-maroon-light: #A32020;
+  --icici-orange: #F37021;
+  --icici-orange-hover: #D8580E;
+  --icici-orange-subtle: rgba(243, 112, 33, 0.12);
+  --icici-navy: #0F172A;
+  --icici-slate: #1E293B;
+  --icici-gold: #D4AF37;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(133, 26, 29, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(133, 26, 29, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+.dark {
+  /* Dark Mode (Deep Sleek Banking Navy) */
+  --bg-primary: #070D14;
+  --bg-surface: #0E1722;
+  --bg-elevated: #152232;
+  --bg-muted: #1E2F44;
+  --bg-card: rgba(14, 23, 34, 0.92);
+  --bg-card-hover: rgba(21, 34, 50, 0.98);
+  
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --border-accent: #F37021;
+  
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-inverse: #070D14;
+  
+  --brand-teal-deep: #A32020;
+  --brand-teal: #851A1D;
+  --brand-teal-light: #FB923C;
+  --brand-teal-subtle: rgba(243, 112, 33, 0.16);
+  
+  --accent-saffron: #F37021;
+  --accent-saffron-hover: #FB923C;
+  --accent-saffron-light: #FED7AA;
+  --accent-saffron-subtle: rgba(243, 112, 33, 0.2);
+
+  --icici-maroon: #A32020;
+  --icici-maroon-dark: #621013;
+  --icici-maroon-light: #C53030;
+  --icici-orange: #F37021;
+  --icici-orange-hover: #FB923C;
+  --icici-orange-subtle: rgba(243, 112, 33, 0.22);
+  --icici-navy: #070D14;
+  --icici-slate: #152232;
+  --icici-gold: #F59E0B;
+
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 8px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 30px -6px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   Typography & Rendering
+   ========================================================================== */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-body), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Specific Telugu text class to guarantee crisp native glyph rendering */
+.font-telugu,
+[lang="te"] {
+  font-family: var(--font-telugu), var(--font-body), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Accessible tap targets */
+a, button, input, select {
+  min-height: 44px;
+}
+
+/* Focus visible styling */
+:focus-visible {
+  outline: 2px solid var(--accent-saffron);
+  outline-offset: 2px;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-saffron);
+}
+
+/* Pulse animation for floating actions and status badges */
+@keyframes soft-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-whatsapp-pulse {
+  animation: soft-pulse 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
