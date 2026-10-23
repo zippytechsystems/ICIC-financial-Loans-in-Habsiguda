@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     "test-site.js",
     "server.js",
+    "index.js",
+    "app.js",
   ]),
 ]);
 

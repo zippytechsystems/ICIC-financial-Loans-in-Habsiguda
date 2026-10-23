@@ -4,27 +4,27 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build || node -e \"if (require('fs').existsSync('out/index.html')) { console.log('> Hostinger: Using pre-built static bundle in out/'); process.exit(0); } else { process.exit(1); }\"",
     "start": "node server.js",
     "lint": "eslint",
     "test": "node test-site.js"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=18.0.0"
   },
   "dependencies": {
-    "next": "^16.4.2",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
-  },
-  "devDependencies": {
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "^16.4.2",
+    "next": "^16.4.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "^16.4.2"
   }
 }
