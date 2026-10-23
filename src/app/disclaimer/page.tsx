@@ -132,6 +132,18 @@ export default function DisclaimerPage() {
           </article>
         )}
 
+        {/* Bottom Back Button */}
+        <div className="pt-8 mt-8 border-t border-[var(--border-subtle)] flex items-center justify-between">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-extrabold text-sm bg-[#851A1D] hover:bg-[#621013] text-white shadow-xs hover:shadow-md transition-all"
+          >
+            <span>←</span>
+            <span>{lang === "te" ? "హోమ్‌కు తిరిగి వెళ్లండి (Back to Home)" : "Back to Home"}</span>
+          </Link>
+          <span className="text-xs text-[var(--text-muted)] font-semibold">{siteConfig.businessName}</span>
+        </div>
+
       </div>
     </main>
   );

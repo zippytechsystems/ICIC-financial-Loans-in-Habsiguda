@@ -12,6 +12,7 @@ import { Steps } from "../components/Steps";
 import { ContactBlock } from "../components/ContactBlock";
 import { Footer } from "../components/Footer";
 import { WhatsAppFab } from "../components/WhatsAppFab";
+import { BackToTop } from "../components/BackToTop";
 
 export default function HomePage() {
   return (
@@ -50,6 +51,9 @@ export default function HomePage() {
 
       {/* 10. Floating WhatsApp Action Button */}
       <WhatsAppFab />
+
+      {/* 11. Floating Back to Top Button */}
+      <BackToTop />
     </div>
   );
 }

@@ -182,12 +182,25 @@ export const LoanDashboardBar: React.FC = () => {
                 </div>
                 <p className="mt-1 text-emerald-800 dark:text-emerald-200/90">{trackResult.details}</p>
               </div>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-center self-start sm:self-auto shrink-0 shadow-xs"
-              >
-                📞 Contact Habsiguda Officer
-              </a>
+              <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setTrackResult(null);
+                    setTrackPhone("");
+                  }}
+                  className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-red-600 border border-slate-300 dark:border-slate-700 font-bold transition-all shadow-xs cursor-pointer flex items-center gap-1"
+                >
+                  <span>←</span>
+                  <span>{lang === "te" ? "వెనక్కి (Back)" : "Back / Clear"}</span>
+                </button>
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-center shadow-xs"
+                >
+                  📞 Contact Habsiguda Officer
+                </a>
+              </div>
             </div>
           )}
         </div>
