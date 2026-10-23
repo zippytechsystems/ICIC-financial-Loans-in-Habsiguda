@@ -23,17 +23,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem("habsiguda_theme") as Theme | null;
-      if (stored === "dark") {
-        document.documentElement.classList.add("dark");
-        queueMicrotask(() => {
-          setThemeState("dark");
-        });
-      } else {
-        // Default to Official Clean Light Banking Canvas
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("habsiguda_theme", "light");
-      }
+      localStorage.setItem("habsiguda_theme", "light");
+      document.documentElement.classList.remove("dark");
+      setThemeState("light");
     } catch {
       // Ignore if localStorage unavailable
       document.documentElement.classList.remove("dark");
@@ -41,14 +33,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
+    setThemeState("light");
     try {
-      localStorage.setItem("habsiguda_theme", newTheme);
-      if (newTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+      localStorage.setItem("habsiguda_theme", "light");
+      document.documentElement.classList.remove("dark");
     } catch {
       // Ignore
     }
