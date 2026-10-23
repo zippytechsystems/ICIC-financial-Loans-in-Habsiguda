@@ -74,34 +74,34 @@ export const EmiCalculator: React.FC = () => {
   return (
     <div
       id="calculator"
-      className="bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-5 sm:p-7 shadow-lg relative overflow-hidden transition-all"
+      className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 sm:p-7 shadow-md relative overflow-hidden transition-all"
     >
       {/* Badge / Header */}
       <div className="flex items-center justify-between gap-3 mb-4 flex-wrap">
         <div>
-          <span className="text-xs font-bold uppercase tracking-wider text-[var(--accent-saffron)] bg-[var(--accent-saffron-subtle)] px-2.5 py-1 rounded-md inline-block">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#F37021] bg-orange-50 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-800/60 px-2.5 py-1 rounded-md inline-block">
             {t.emiCalc.indicativeTag}
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] mt-1">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1">
             {t.emiCalc.title}
           </h2>
         </div>
-        <div className="text-xs text-[var(--text-muted)] bg-[var(--bg-elevated)] px-2.5 py-1.5 rounded-lg border border-[var(--border-subtle)]">
+        <div className="text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
           {lang === "te" ? "సూత్రప్రాయ ఈఎంఐ" : "Standard Reducing Balance"}
         </div>
       </div>
 
-      <p className="text-xs sm:text-sm text-[var(--text-secondary)] mb-6">
+      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-5">
         {t.emiCalc.subtitle}
       </p>
 
       {/* Control 1: Loan Amount */}
       <div className="mb-5">
         <div className="flex justify-between items-center mb-1.5 text-sm">
-          <label htmlFor={amtInputId} className="font-semibold text-[var(--text-secondary)]">
+          <label htmlFor={amtInputId} className="font-bold text-slate-700 dark:text-slate-300">
             {t.emiCalc.loanAmountLabel}
           </label>
-          <span className="font-bold text-base text-[var(--brand-teal)] dark:text-[var(--brand-teal-light)] bg-[var(--brand-teal-subtle)] px-2.5 py-0.5 rounded-md">
+          <span className="font-extrabold text-base text-[#851A1D] dark:text-[#F37021] bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-900/60 px-2.5 py-0.5 rounded-md font-mono">
             {formatINR(loanAmount)}
           </span>
         </div>
@@ -113,23 +113,41 @@ export const EmiCalculator: React.FC = () => {
           step={50000}
           value={loanAmount}
           onChange={(e) => setLoanAmount(Number(e.target.value))}
-          className="w-full h-2.5 bg-[var(--bg-elevated)] rounded-lg appearance-none cursor-pointer accent-[var(--brand-teal)]"
+          className="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#851A1D]"
           aria-label={t.emiCalc.loanAmountLabel}
         />
-        <div className="flex justify-between text-[11px] text-[var(--text-muted)] mt-1">
+        <div className="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-1">
           <span>₹1 Lakh</span>
           <span>₹75 Lakhs</span>
           <span>₹1.5 Crore</span>
+        </div>
+        
+        {/* Quick Amount Chips */}
+        <div className="flex items-center gap-1.5 mt-2 flex-wrap">
+          {[2500000, 3500000, 5000000, 7500000, 10000000].map((preset) => (
+            <button
+              key={preset}
+              type="button"
+              onClick={() => setLoanAmount(preset)}
+              className={`px-2 py-0.5 rounded text-[11px] font-bold transition-colors cursor-pointer border ${
+                loanAmount === preset
+                  ? "bg-[#851A1D] text-white border-[#851A1D]"
+                  : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600 hover:border-[#851A1D]"
+              }`}
+            >
+              ₹{preset >= 10000000 ? `${preset / 10000000} Cr` : `${preset / 100000}L`}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Control 2: Interest Rate */}
       <div className="mb-5">
         <div className="flex justify-between items-center mb-1.5 text-sm">
-          <label htmlFor={roiInputId} className="font-semibold text-[var(--text-secondary)]">
+          <label htmlFor={roiInputId} className="font-bold text-slate-700 dark:text-slate-300">
             {t.emiCalc.rateLabel}
           </label>
-          <span className="font-bold text-base text-[var(--accent-saffron)] bg-[var(--accent-saffron-subtle)] px-2.5 py-0.5 rounded-md">
+          <span className="font-extrabold text-base text-[#F37021] bg-orange-50 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-900/60 px-2.5 py-0.5 rounded-md font-mono">
             {annualRate.toFixed(2)}% p.a.
           </span>
         </div>
@@ -141,23 +159,46 @@ export const EmiCalculator: React.FC = () => {
           step={0.1}
           value={annualRate}
           onChange={(e) => setAnnualRate(Number(e.target.value))}
-          className="w-full h-2.5 bg-[var(--bg-elevated)] rounded-lg appearance-none cursor-pointer accent-[var(--accent-saffron)]"
+          className="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#F37021]"
           aria-label={t.emiCalc.rateLabel}
         />
-        <div className="flex justify-between text-[11px] text-[var(--text-muted)] mt-1">
+        <div className="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-1">
           <span>7.5%</span>
-          <span>8.75% (Sample)</span>
+          <span>8.35% (Home Benchmark)</span>
           <span>16.0%</span>
+        </div>
+
+        {/* Quick ROI Chips */}
+        <div className="flex items-center gap-1.5 mt-2 flex-wrap">
+          {[
+            { label: "8.35% (Home)", val: 8.35 },
+            { label: "9.25% (LAP)", val: 9.25 },
+            { label: "10.65% (Personal)", val: 10.65 },
+            { label: "11.25% (Business)", val: 11.25 },
+          ].map((preset) => (
+            <button
+              key={preset.val}
+              type="button"
+              onClick={() => setAnnualRate(preset.val)}
+              className={`px-2 py-0.5 rounded text-[11px] font-bold transition-colors cursor-pointer border ${
+                annualRate === preset.val
+                  ? "bg-[#F37021] text-white border-[#F37021]"
+                  : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600 hover:border-[#F37021]"
+              }`}
+            >
+              {preset.label}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Control 3: Loan Tenure */}
       <div className="mb-6">
         <div className="flex justify-between items-center mb-1.5 text-sm">
-          <label htmlFor={tenureInputId} className="font-semibold text-[var(--text-secondary)]">
+          <label htmlFor={tenureInputId} className="font-bold text-slate-700 dark:text-slate-300">
             {t.emiCalc.tenureLabel}
           </label>
-          <span className="font-bold text-base text-[var(--brand-teal)] dark:text-[var(--brand-teal-light)] bg-[var(--brand-teal-subtle)] px-2.5 py-0.5 rounded-md">
+          <span className="font-extrabold text-base text-[#851A1D] dark:text-[#F37021] bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-900/60 px-2.5 py-0.5 rounded-md font-mono">
             {tenureYears} {t.emiCalc.yearsText}
           </span>
         </div>
@@ -169,13 +210,31 @@ export const EmiCalculator: React.FC = () => {
           step={1}
           value={tenureYears}
           onChange={(e) => setTenureYears(Number(e.target.value))}
-          className="w-full h-2.5 bg-[var(--bg-elevated)] rounded-lg appearance-none cursor-pointer accent-[var(--brand-teal)]"
+          className="w-full h-2.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#851A1D]"
           aria-label={t.emiCalc.tenureLabel}
         />
-        <div className="flex justify-between text-[11px] text-[var(--text-muted)] mt-1">
+        <div className="flex justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-1">
           <span>1 Year</span>
           <span>15 Years</span>
           <span>30 Years</span>
+        </div>
+
+        {/* Quick Tenure Chips */}
+        <div className="flex items-center gap-1.5 mt-2 flex-wrap">
+          {[5, 10, 15, 20, 25, 30].map((yr) => (
+            <button
+              key={yr}
+              type="button"
+              onClick={() => setTenureYears(yr)}
+              className={`px-2 py-0.5 rounded text-[11px] font-bold transition-colors cursor-pointer border ${
+                tenureYears === yr
+                  ? "bg-[#851A1D] text-white border-[#851A1D]"
+                  : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600 hover:border-[#851A1D]"
+              }`}
+            >
+              {yr} Yrs
+            </button>
+          ))}
         </div>
       </div>
 

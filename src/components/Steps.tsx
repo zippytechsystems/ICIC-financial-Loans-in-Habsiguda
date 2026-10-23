@@ -34,18 +34,18 @@ export const Steps: React.FC = () => {
   ];
 
   return (
-    <section id="process" className="py-12 sm:py-18 bg-[var(--bg-surface)] border-t border-[var(--border-subtle)] scroll-mt-20">
+    <section id="process" className="py-12 sm:py-18 bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider text-[var(--brand-teal)] dark:text-[var(--brand-teal-light)] bg-[var(--brand-teal-subtle)] px-3 py-1 rounded-full border border-[var(--brand-teal-light)]/20 inline-block mb-2">
-            🚀 Smooth & Effortless
+          <span className="text-xs font-black uppercase tracking-wider text-[#851A1D] dark:text-[#F37021] bg-red-50 dark:bg-red-950/60 px-3.5 py-1 rounded-full border border-red-200 dark:border-red-900/60 inline-block mb-3 shadow-xs">
+            🚀 Transparent Bank Underwriting Process
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {t.processSection.title}
           </h2>
-          <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-2">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
             {t.processSection.subtitle}
           </p>
         </div>
@@ -55,27 +55,27 @@ export const Steps: React.FC = () => {
           {stepItems.map((step, idx) => (
             <div
               key={idx}
-              className="relative p-6 rounded-2xl bg-[var(--bg-elevated)]/60 border border-[var(--border-subtle)] hover:border-[var(--brand-teal-light)]/40 transition-all flex flex-col justify-between group hover:-translate-y-1 shadow-xs hover:shadow-md"
+              className="relative p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 hover:border-[#F37021] transition-all flex flex-col justify-between group hover:-translate-y-1 shadow-xs hover:shadow-md"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="w-10 h-10 rounded-xl bg-[var(--brand-teal-deep)] text-white font-extrabold text-sm flex items-center justify-center shadow-xs">
+                  <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#851A1D] to-[#621013] text-white font-extrabold text-sm flex items-center justify-center shadow-xs">
                     {step.num}
                   </span>
                   <span className="text-2xl group-hover:scale-110 transition-transform">
                     {step.icon}
                   </span>
                 </div>
-                <h3 className="font-extrabold text-base sm:text-lg text-[var(--text-primary)] mb-2">
+                <h3 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-2">
                   {step.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                   {step.desc}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-[var(--border-subtle)] flex items-center text-[11px] font-bold text-[var(--accent-saffron)]">
-                <span>Fast Track Processing</span>
+              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-700/60 flex items-center text-[11px] font-bold text-[#F37021]">
+                <span>Doorstep Execution</span>
                 <span className="ml-1">→</span>
               </div>
             </div>

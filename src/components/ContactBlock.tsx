@@ -8,18 +8,18 @@ export const ContactBlock: React.FC = () => {
   const { lang, t } = useLanguage();
 
   return (
-    <section id="contact" className="py-12 sm:py-18 bg-[var(--bg-primary)] scroll-mt-20">
+    <section id="contact" className="py-12 sm:py-18 bg-white dark:bg-slate-900 scroll-mt-20 border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[var(--accent-saffron)] bg-[var(--accent-saffron-subtle)] px-3 py-1 rounded-full border border-[var(--accent-saffron)]/20 inline-block mb-2">
-            📍 Local Habsiguda Guidance
+          <span className="text-xs font-black uppercase tracking-wider text-[#851A1D] dark:text-[#F37021] bg-red-50 dark:bg-red-950/60 px-3.5 py-1 rounded-full border border-red-200 dark:border-red-900/60 inline-block mb-3 shadow-xs">
+            📍 Local Habsiguda Guidance & Asset Hub
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {t.contactSection.title}
           </h2>
-          <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-2">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
             {t.contactSection.subtitle}
           </p>
         </div>
@@ -31,29 +31,29 @@ export const ContactBlock: React.FC = () => {
           <div className="lg:col-span-6 space-y-6">
             
             {/* Phone & WhatsApp Card */}
-            <div className="bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6 shadow-sm">
+            <div className="bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-xs">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xl">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-600 flex items-center justify-center text-xl shrink-0">
                   📞
                 </div>
                 <div>
-                  <h3 className="font-bold text-base text-[var(--text-primary)]">
+                  <h3 className="font-bold text-base text-slate-900 dark:text-white">
                     {t.contactSection.phoneTitle}
                   </h3>
-                  <span className="text-xs text-[var(--text-muted)]">
+                  <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                     WhatsApp Business & Direct Line
                   </span>
                 </div>
               </div>
 
-              <div className="text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] tracking-tight mb-4">
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#851A1D] dark:text-[#F37021] tracking-tight mb-4 font-mono">
                 {siteConfig.phone}
               </div>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm bg-[var(--brand-teal-deep)] hover:bg-[var(--brand-teal)] text-white shadow-xs transition-all cursor-pointer"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-sm bg-[#851A1D] hover:bg-[#621013] text-white shadow-xs transition-all cursor-pointer"
                   aria-label={`Call ${siteConfig.displayPhone}`}
                 >
                   <span>📞</span>
@@ -75,27 +75,27 @@ export const ContactBlock: React.FC = () => {
             </div>
 
             {/* Address & Working Hours Card */}
-            <div className="bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6 shadow-sm">
+            <div className="bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-xs">
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <span className="text-xl flex-shrink-0 mt-0.5">🏢</span>
                   <div>
-                    <h4 className="font-bold text-sm text-[var(--text-primary)]">
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white">
                       {t.contactSection.addressTitle}
                     </h4>
-                    <p className="text-sm text-[var(--text-secondary)] mt-0.5">
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mt-0.5 font-normal">
                       {lang === "te" ? siteConfig.addressTe : siteConfig.address}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 pt-3 border-t border-[var(--border-subtle)]">
+                <div className="flex items-start gap-3 pt-3 border-t border-slate-200 dark:border-slate-700">
                   <span className="text-xl flex-shrink-0 mt-0.5">⏰</span>
                   <div>
-                    <h4 className="font-bold text-sm text-[var(--text-primary)]">
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white">
                       {t.contactSection.hoursTitle}
                     </h4>
-                    <p className="text-sm text-[var(--text-secondary)] mt-0.5">
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mt-0.5 font-normal">
                       {lang === "te" ? siteConfig.hoursTe : siteConfig.hours}
                     </p>
                   </div>
@@ -104,8 +104,8 @@ export const ContactBlock: React.FC = () => {
             </div>
 
             {/* Service Areas */}
-            <div className="bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6 shadow-sm">
-              <h4 className="font-bold text-sm text-[var(--text-primary)] mb-3 flex items-center gap-2">
+            <div className="bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-xs">
+              <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-3 flex items-center gap-2">
                 <span>📍</span>
                 <span>{t.contactSection.serviceAreasTitle}</span>
               </h4>
@@ -114,7 +114,7 @@ export const ContactBlock: React.FC = () => {
                   (area, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1.5 rounded-lg bg-[var(--bg-elevated)] border border-[var(--border-subtle)] text-xs font-semibold text-[var(--text-secondary)]"
+                      className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-xs"
                     >
                       {area}
                     </span>
@@ -128,42 +128,33 @@ export const ContactBlock: React.FC = () => {
           {/* Map Embed or Office Profile Column */}
           <div className="lg:col-span-6 flex flex-col justify-between h-full space-y-6">
             
-            {/* Owner Profile Card (Clearly marked slot for real photo) */}
-            <div className="bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6 shadow-sm">
+            {/* Owner Profile Card */}
+            <div className="bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 shadow-xs">
               <div className="flex items-center gap-4">
-                {siteConfig.ownerPhoto ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={siteConfig.ownerPhoto}
-                    alt={siteConfig.businessName}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-[var(--brand-teal)]"
-                  />
-                ) : (
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--brand-teal-deep)] to-[var(--brand-teal)] text-white flex items-center justify-center text-2xl font-black shadow-md border border-white/20">
-                    HLD
-                  </div>
-                )}
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#851A1D] to-[#621013] text-white flex items-center justify-center text-2xl font-black shadow-md border border-white/20 shrink-0">
+                  HLD
+                </div>
                 <div>
-                  <span className="text-xs font-bold text-[var(--accent-saffron)] uppercase tracking-wider block">
+                  <span className="text-xs font-bold text-[#F37021] uppercase tracking-wider block">
                     {lang === "te" ? siteConfig.ownerTitleTe : siteConfig.ownerTitle}
                   </span>
-                  <h4 className="text-lg font-extrabold text-[var(--text-primary)]">
+                  <h4 className="text-lg font-extrabold text-slate-900 dark:text-white">
                     {lang === "te" ? siteConfig.businessNameTe : siteConfig.businessName}
                   </h4>
-                  <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
                     Habsiguda, Uppal & East Hyderabad Loan Advisory Desk
                   </p>
                 </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-[var(--border-subtle)] text-xs text-[var(--text-muted)] flex items-center justify-between">
+              <div className="mt-4 pt-3 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between">
                 <span>Direct ICICI Bank Loan Facilitation</span>
-                <span className="font-semibold text-emerald-600">✓ Verified Connector</span>
+                <span className="font-semibold text-emerald-600 dark:text-emerald-400">✓ Verified Connector</span>
               </div>
             </div>
 
             {/* Google Maps Embed Slot */}
             {siteConfig.googleMapsEmbedUrl ? (
-              <div className="bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-2 shadow-sm overflow-hidden flex-1 min-h-[300px]">
+              <div className="bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl p-2 shadow-xs overflow-hidden flex-1 min-h-[300px]">
                 <iframe
                   title="Habsiguda Loan Desk Location Map"
                   src={siteConfig.googleMapsEmbedUrl}

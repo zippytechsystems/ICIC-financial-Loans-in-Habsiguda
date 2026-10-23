@@ -24,23 +24,18 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     try {
       const stored = localStorage.getItem("habsiguda_theme") as Theme | null;
-      if (stored === "dark" || stored === "light") {
-        setThemeState(stored);
-        if (stored === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
+      if (stored === "dark") {
+        setThemeState("dark");
+        document.documentElement.classList.add("dark");
       } else {
-        // System preference default
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (prefersDark) {
-          setThemeState("dark");
-          document.documentElement.classList.add("dark");
-        }
+        // Default to Official Clean Light Banking Canvas
+        setThemeState("light");
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("habsiguda_theme", "light");
       }
     } catch {
       // Ignore if localStorage unavailable
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 

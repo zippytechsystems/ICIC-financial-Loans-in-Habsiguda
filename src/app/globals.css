@@ -11,74 +11,83 @@
    ========================================================================== */
 
 :root {
-  /* Light Mode (Official ICICI Bank Canvas) */
+  /* Official Prestigious Bank Canvas (Pure Crisp Light Theme) */
   --bg-primary: #F8FAFC;
   --bg-surface: #FFFFFF;
   --bg-elevated: #F1F5F9;
+  --bg-subtle: #F8FAFC;
   --bg-muted: #E2E8F0;
-  --bg-card: rgba(255, 255, 255, 0.96);
-  --bg-card-hover: rgba(255, 255, 255, 1);
+  --bg-highlight: #FFF7ED;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
   
   --border-subtle: #E2E8F0;
   --border-strong: #CBD5E1;
   --border-accent: #F37021;
+  --border-maroon: #851A1D;
   
   --text-primary: #0F172A;
   --text-secondary: #334155;
   --text-muted: #64748B;
   --text-inverse: #FFFFFF;
   
-  /* Official ICICI Maroon Brand */
+  /* Official ICICI Garnet Maroon Corporate Brand */
   --brand-teal-deep: #851A1D;
   --brand-teal: #851A1D;
   --brand-teal-light: #F37021;
-  --brand-teal-subtle: rgba(243, 112, 33, 0.08);
+  --brand-teal-subtle: rgba(133, 26, 29, 0.06);
   
   /* ICICI Signature Tangerine Orange */
   --accent-saffron: #F37021;
   --accent-saffron-hover: #D8580E;
   --accent-saffron-light: #FED7AA;
-  --accent-saffron-subtle: rgba(243, 112, 33, 0.12);
+  --accent-saffron-subtle: rgba(243, 112, 33, 0.1);
   
   /* WhatsApp Green */
   --whatsapp-green: #25D366;
-  --whatsapp-hover: #20bd5a;
+  --whatsapp-hover: #1EBE5D;
   --whatsapp-glow: rgba(37, 211, 102, 0.35);
 
-  /* Official ICICI Bank Brand Tokens */
+  /* Banking Corporate Tokens */
   --icici-maroon: #851A1D;
   --icici-maroon-dark: #621013;
-  --icici-maroon-light: #A32020;
+  --icici-maroon-light: #9E1F23;
   --icici-orange: #F37021;
   --icici-orange-hover: #D8580E;
-  --icici-orange-subtle: rgba(243, 112, 33, 0.12);
-  --icici-navy: #0F172A;
+  --icici-orange-subtle: rgba(243, 112, 33, 0.1);
+  --icici-navy: #0A192F;
   --icici-slate: #1E293B;
   --icici-gold: #D4AF37;
+  --icici-gold-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
+  --icici-maroon-gradient: linear-gradient(135deg, #621013 0%, #851A1D 50%, #A32020 100%);
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(133, 26, 29, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(133, 26, 29, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(133, 26, 29, 0.09), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
 .dark {
-  /* Dark Mode (Deep Sleek Banking Navy) */
-  --bg-primary: #070D14;
-  --bg-surface: #0E1722;
-  --bg-elevated: #152232;
-  --bg-muted: #1E2F44;
-  --bg-card: rgba(14, 23, 34, 0.92);
-  --bg-card-hover: rgba(21, 34, 50, 0.98);
+  /* Rich Corporate Banking Navy (NOT pitch black) */
+  --bg-primary: #0F172A;
+  --bg-surface: #1E293B;
+  --bg-elevated: #283548;
+  --bg-subtle: #1E293B;
+  --bg-muted: #334155;
+  --bg-highlight: #2A2421;
+  --bg-card: #1E293B;
+  --bg-card-hover: #243246;
   
-  --border-subtle: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 255, 255, 0.2);
+  --border-subtle: #334155;
+  --border-strong: #475569;
   --border-accent: #F37021;
+  --border-maroon: #A32020;
   
   --text-primary: #F8FAFC;
-  --text-secondary: #CBD5E1;
+  --text-secondary: #E2E8F0;
   --text-muted: #94A3B8;
-  --text-inverse: #070D14;
+  --text-inverse: #0F172A;
   
   --brand-teal-deep: #A32020;
   --brand-teal: #851A1D;
@@ -96,14 +105,16 @@
   --icici-orange: #F37021;
   --icici-orange-hover: #FB923C;
   --icici-orange-subtle: rgba(243, 112, 33, 0.22);
-  --icici-navy: #070D14;
-  --icici-slate: #152232;
+  --icici-navy: #0F172A;
+  --icici-slate: #1E293B;
   --icici-gold: #F59E0B;
+  --icici-gold-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 50%, #B45309 100%);
+  --icici-maroon-gradient: linear-gradient(135deg, #851A1D 0%, #A32020 50%, #C53030 100%);
 
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 8px -1px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.6);
-  --shadow-xl: 0 20px 30px -6px rgba(0, 0, 0, 0.7);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 30px -6px rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================================================
@@ -177,3 +188,64 @@ a, button, input, select {
 .animate-whatsapp-pulse {
   animation: soft-pulse 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
+
+/* ==========================================================================
+   Bank Portal Utilities & Clean Banking Layout Helpers
+   ========================================================================== */
+
+.bank-canvas {
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 100% 0%, rgba(243, 112, 33, 0.04) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(133, 26, 29, 0.03) 0px, transparent 50%);
+}
+
+.bank-pattern-bg {
+  background-color: #FFFFFF;
+  background-image: radial-gradient(#CBD5E1 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+.bank-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bank-card:hover {
+  border-color: rgba(243, 112, 33, 0.35);
+  box-shadow: 0 10px 20px -3px rgba(133, 26, 29, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+.bank-card-highlight {
+  background: #FFFFFF;
+  border: 1px solid rgba(243, 112, 33, 0.25);
+  border-top: 3px solid #F37021;
+}
+
+.bank-btn-primary {
+  background: linear-gradient(135deg, #851A1D 0%, #621013 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.bank-btn-primary:hover {
+  background: linear-gradient(135deg, #A32020 0%, #851A1D 100%);
+  box-shadow: 0 4px 12px rgba(133, 26, 29, 0.25);
+}
+
+.bank-btn-accent {
+  background: linear-gradient(135deg, #F37021 0%, #D8580E 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.bank-btn-accent:hover {
+  background: linear-gradient(135deg, #FB923C 0%, #F37021 100%);
+  box-shadow: 0 4px 12px rgba(243, 112, 33, 0.3);
+}
+

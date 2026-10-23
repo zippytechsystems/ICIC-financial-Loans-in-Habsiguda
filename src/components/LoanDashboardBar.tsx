@@ -72,41 +72,42 @@ export const LoanDashboardBar: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-r from-[#621013] via-[#851A1D] to-[#621013] text-white border-y border-[#F37021]/30 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+    <div className="w-full bg-[#F8FAFC] dark:bg-[#1E293B] text-[var(--text-primary)] border-b border-slate-200 dark:border-slate-800 shadow-xs transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
         
         {/* Top Hub Indicator Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#F37021] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#851A1D] to-[#621013] text-white flex items-center justify-center font-bold text-xl shadow-xs shrink-0">
               🏛️
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="font-extrabold text-sm sm:text-base tracking-wide text-white uppercase font-serif">
-                  ICICI Bank Retail Asset Hub • Customer Loan Desk
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="font-extrabold text-sm sm:text-base tracking-tight text-[#851A1D] dark:text-[#F37021] uppercase font-serif">
+                  ICICI Bank Retail Asset Hub • Direct Loan Sourcing Desk
                 </span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500 text-white shadow-xs">
-                  ONLINE
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 shadow-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  DESK ACTIVE
                 </span>
               </div>
-              <p className="text-xs text-amber-200/90 font-medium">
-                Habsiguda Branch Code: <strong>0492</strong> • Partner Code: <strong className="font-mono text-white">CP-HBG-04921</strong> • Hyderabad – 500007
+              <p className="text-xs text-slate-600 dark:text-slate-300 font-medium">
+                Habsiguda Branch Code: <strong>0492</strong> • Partner Sourcing Code: <strong className="font-mono text-[#851A1D] dark:text-amber-300">CP-HBG-04921</strong> • Metro Pillar 997, Hyderabad
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 self-start md:self-auto text-xs">
+          <div className="flex items-center gap-2.5 self-start md:self-auto text-xs">
             <a
               href="#calculator"
-              className="px-3.5 py-1.5 rounded-lg font-bold bg-white/10 hover:bg-white/20 border border-white/20 transition-all flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-lg font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-[#851A1D] border border-slate-200 dark:border-slate-700 hover:border-[#851A1D] transition-all flex items-center gap-1.5 shadow-xs"
             >
               <span>🧮</span>
               <span>EMI Calculator</span>
             </a>
             <a
               href="#eligibility"
-              className="px-3.5 py-1.5 rounded-lg font-bold bg-[#F37021] hover:bg-[#D8580E] text-white transition-all shadow-sm flex items-center gap-1.5"
+              className="px-3.5 py-1.5 rounded-lg font-bold bg-[#F37021] hover:bg-[#D8580E] text-white transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
             >
               <span>⚡</span>
               <span>Instant Eligibility</span>
@@ -114,26 +115,26 @@ export const LoanDashboardBar: React.FC = () => {
           </div>
         </div>
 
-        {/* Loan Product Ticker Cards */}
+        {/* Loan Product Benchmark Rate Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-4">
           {quickLoans.map((loan) => (
             <a
               key={loan.id}
               href={loan.link}
-              className="group bg-white/10 hover:bg-white/15 border border-white/15 hover:border-[#F37021] rounded-xl p-3 sm:p-3.5 transition-all flex items-center justify-between shadow-xs hover:shadow-md"
+              className="group bg-white dark:bg-slate-800/80 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-700/80 hover:border-[#F37021] rounded-xl p-3 sm:p-3.5 transition-all flex items-center justify-between shadow-xs hover:shadow-md"
             >
               <div className="flex items-center gap-2.5">
                 <span className="text-2xl group-hover:scale-110 transition-transform">{loan.icon}</span>
                 <div>
-                  <div className="text-xs sm:text-sm font-bold text-white group-hover:text-amber-200">
+                  <div className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-[#851A1D] dark:group-hover:text-[#F37021] transition-colors">
                     {lang === "te" ? loan.titleTe : loan.title}
                   </div>
-                  <div className="text-[10px] text-amber-300 font-semibold">
+                  <div className="text-[11px] text-[#851A1D] dark:text-amber-300 font-extrabold">
                     ROI from {loan.roi}
                   </div>
                 </div>
               </div>
-              <span className="hidden sm:inline-block text-[9px] font-bold px-2 py-0.5 rounded bg-[#F37021]/80 text-white">
+              <span className="hidden sm:inline-block text-[9px] font-bold px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/60 text-[#851A1D] dark:text-amber-300 border border-amber-200 dark:border-amber-800">
                 {loan.badge}
               </span>
             </a>
@@ -141,14 +142,14 @@ export const LoanDashboardBar: React.FC = () => {
         </div>
 
         {/* Quick Application / Lead Status Tracker Accordion */}
-        <div className="mt-4 pt-4 border-t border-white/10">
+        <div className="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800">
           <form
             onSubmit={handleTrackSubmit}
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-black/20 p-3 rounded-xl border border-white/10"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white dark:bg-slate-800/90 p-3 sm:p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xs"
           >
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold">
-              <span className="text-amber-400 text-base">🔍</span>
-              <span>{lang === "te" ? "మీ లోన్ అప్లికేషన్ స్టేటస్ చెక్ చేసుకోండి:" : "Track Your Loan Application / Inquiry Status:"}</span>
+            <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100">
+              <span className="text-[#F37021] text-base">🔍</span>
+              <span>{lang === "te" ? "మీ లోన్ అప్లికేషన్ స్టేటస్ చెక్ చేసుకోండి:" : "Track Your Loan Sourcing & Eligibility Status:"}</span>
             </div>
 
             <div className="flex items-center gap-2">
@@ -158,12 +159,12 @@ export const LoanDashboardBar: React.FC = () => {
                 onChange={(e) => setTrackPhone(e.target.value)}
                 placeholder={lang === "te" ? "10 అంకెల మొబైల్ నంబర్" : "Enter 10-digit mobile no."}
                 maxLength={10}
-                className="px-3 py-1.5 rounded-lg text-xs bg-white text-slate-900 font-semibold focus:outline-none focus:ring-2 focus:ring-[#F37021] w-48"
+                className="px-3 py-1.5 rounded-lg text-xs bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white font-semibold border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-[#F37021] w-48 shadow-inner"
               />
               <button
                 type="submit"
                 disabled={isSearching}
-                className="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#F37021] hover:bg-[#D8580E] text-white transition-all shadow-xs cursor-pointer whitespace-nowrap"
+                className="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-[#851A1D] hover:bg-[#621013] text-white transition-all shadow-xs cursor-pointer whitespace-nowrap"
               >
                 {isSearching ? "Checking..." : (lang === "te" ? "స్టేటస్ చూడండి" : "Check Status")}
               </button>
@@ -171,19 +172,19 @@ export const LoanDashboardBar: React.FC = () => {
           </form>
 
           {trackResult && (
-            <div className="mt-3 p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-100 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in">
+            <div className="mt-3 p-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-700 text-emerald-950 dark:text-emerald-100 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in shadow-xs">
               <div>
-                <div className="flex items-center gap-2 font-bold text-emerald-300">
-                  <span>✓ Application Reference: {trackResult.refId}</span>
-                  <span className="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-black text-[10px]">
+                <div className="flex items-center gap-2 font-bold text-emerald-900 dark:text-emerald-200">
+                  <span>✓ Application Reference: <strong className="font-mono">{trackResult.refId}</strong></span>
+                  <span className="px-2 py-0.5 rounded bg-emerald-600 text-white font-black text-[10px]">
                     {trackResult.stage}
                   </span>
                 </div>
-                <p className="mt-1 text-emerald-200/90">{trackResult.details}</p>
+                <p className="mt-1 text-emerald-800 dark:text-emerald-200/90">{trackResult.details}</p>
               </div>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-center self-start sm:self-auto shrink-0 shadow-xs"
+                className="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-center self-start sm:self-auto shrink-0 shadow-xs"
               >
                 📞 Contact Habsiguda Officer
               </a>

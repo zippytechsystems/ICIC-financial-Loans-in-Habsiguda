@@ -9,9 +9,9 @@ export const Hero: React.FC = () => {
   const { lang, t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-[#851A1D]/10 via-[var(--bg-primary)] to-[var(--bg-primary)]">
-      {/* Subtle background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-[#F37021]/10 to-transparent pointer-events-none -z-10 rounded-full blur-3xl opacity-80"></div>
+    <section className="relative overflow-hidden py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-[#F8FAFC] via-white to-[#F1F5F9] dark:from-[#0F172A] dark:via-[#1E293B] dark:to-[#0F172A] border-b border-slate-200 dark:border-slate-800">
+      {/* Subtle banking watermark glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-orange-500/5 to-transparent pointer-events-none -z-10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--text-primary)] leading-[1.18] tracking-tight mb-3 font-serif">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-[1.18] tracking-tight mb-3 font-serif">
               ICICI Bank & Multi-Bank <span className="text-[#851A1D] dark:text-[#F37021]">Retail Loan Sourcing Hub</span>
             </h1>
 
@@ -36,21 +36,21 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed mb-5 max-w-2xl font-medium">
+            <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-5 max-w-2xl font-medium">
               {lang === "te"
                 ? "హబ్సిగూడ, ఉప్పల్, తార్నాక, నాచారం పరిసర ప్రాంతాల వారికి హోమ్ లోన్లు, ప్రాపర్టీపై లోన్లు (LAP) మరియు బిజినెస్ లోన్లు అత్యల్ప వడ్డీ రేట్లతో (8.35%* నుండి) డోర్‌స్టెప్ సర్వీస్."
                 : "Doorstep loan processing for Home Loans, Loan Against Property (LAP), Business Loans & Personal Loans across Habsiguda, Uppal & East Hyderabad starting @ 8.35%* p.a."}
             </p>
 
             {/* Exact Flyer Telugu Quotes Banner (Rendered as Crisp Native Text) */}
-            <div className="bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-amber-500/10 border-l-4 border-[#F37021] rounded-r-xl p-4 sm:p-5 mb-6 shadow-sm">
+            <div className="bg-[#FFFBEB] dark:bg-slate-800/90 border-l-4 border-[#F37021] border-y border-r border-amber-200 dark:border-slate-700 rounded-r-xl p-4 sm:p-5 mb-6 shadow-xs">
               <div className="flex items-start gap-3">
                 <span className="text-2xl flex-shrink-0">💡</span>
                 <div>
-                  <p className="font-telugu font-bold text-base sm:text-lg text-[#851A1D] dark:text-amber-200 leading-snug">
+                  <p className="font-telugu font-bold text-base sm:text-lg text-[#851A1D] dark:text-amber-300 leading-snug">
                     &ldquo;మీ Profile & Eligibility ఆధారంగా సరైన bank/loan option ఎంచుకోండి.&rdquo;
                   </p>
-                  <p className="font-telugu text-xs sm:text-sm text-amber-900/90 dark:text-amber-300/90 mt-1 leading-normal font-semibold">
+                  <p className="font-telugu text-xs sm:text-sm text-amber-950 dark:text-amber-200 mt-1 leading-normal font-semibold">
                     ఒకే చోట ICICI బ్యాంక్ మరియు ఇతర ప్రముఖ బ్యాంకుల ద్వారా లోన్ సదుపాయం.
                   </p>
                 </div>
@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Live Benchmark ROI Chips */}
-            <div className="bg-white dark:bg-[#0E1722] border border-slate-200 dark:border-slate-800 rounded-xl p-4 sm:p-5 mb-7 shadow-xs">
+            <div className="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-xl p-4 sm:p-5 mb-7 shadow-xs">
               <div className="flex items-center justify-between gap-2 flex-wrap mb-3">
                 <div className="flex items-center gap-2">
                   <span className="text-[#F37021] font-bold text-base">📈</span>

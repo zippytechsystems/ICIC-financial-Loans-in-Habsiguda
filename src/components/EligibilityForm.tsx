@@ -68,18 +68,18 @@ export const EligibilityForm: React.FC = () => {
   };
 
   return (
-    <section id="eligibility" className="py-12 sm:py-18 bg-[var(--bg-elevated)]/40 scroll-mt-20">
+    <section id="eligibility" className="py-12 sm:py-18 bg-white dark:bg-slate-900 scroll-mt-20 border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-[var(--accent-saffron)] bg-[var(--accent-saffron-subtle)] px-3 py-1 rounded-full border border-[var(--accent-saffron)]/20 inline-block mb-2">
-            📝 1-Minute Eligibility Check
+          <span className="text-xs font-black uppercase tracking-wider text-[#851A1D] dark:text-[#F37021] bg-red-50 dark:bg-red-950/60 px-3.5 py-1 rounded-full border border-red-200 dark:border-red-900/60 inline-block mb-3 shadow-xs">
+            📝 1-Minute Bank Eligibility Assessment
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {t.eligibilityForm.title}
           </h2>
-          <p className="text-sm sm:text-base text-[var(--text-secondary)] mt-2">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
             {t.eligibilityForm.subtitle}
           </p>
         </div>
@@ -88,17 +88,17 @@ export const EligibilityForm: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* Eligibility Form Column */}
-          <div className="lg:col-span-7 bg-[var(--bg-surface)] border border-[var(--border-subtle)] rounded-2xl p-6 sm:p-8 shadow-md">
+          <div className="lg:col-span-7 bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xs">
             
             {/* STRICT SECURITY WARNING BANNER */}
-            <div className="mb-6 p-4 rounded-xl bg-amber-500/10 border-l-4 border-amber-500 text-amber-950 dark:text-amber-200">
+            <div className="mb-6 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/60 border-l-4 border-[#F37021] border-y border-r border-amber-200 dark:border-slate-700 text-amber-950 dark:text-amber-200">
               <div className="flex items-start gap-3">
                 <span className="text-2xl flex-shrink-0">🛡️</span>
                 <div>
-                  <h4 className="font-bold text-sm">
+                  <h4 className="font-bold text-sm text-[#851A1D] dark:text-amber-300">
                     {t.eligibilityForm.securityAlertTitle}
                   </h4>
-                  <p className="text-xs leading-relaxed mt-0.5">
+                  <p className="text-xs leading-relaxed mt-0.5 font-normal text-slate-700 dark:text-slate-300">
                     {t.eligibilityForm.securityAlertMsg}
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export const EligibilityForm: React.FC = () => {
               
               {/* Full Name */}
               <div>
-                <label htmlFor="user-name" className="block text-xs sm:text-sm font-bold text-[var(--text-primary)] mb-1.5">
+                <label htmlFor="user-name" className="block text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mb-1.5">
                   {t.eligibilityForm.fullNameLabel} <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -119,17 +119,17 @@ export const EligibilityForm: React.FC = () => {
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                   placeholder={t.eligibilityForm.fullNamePlaceholder}
-                  className="w-full px-4 py-3 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-strong)] text-[var(--text-primary)] placeholder-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-saffron)] transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#F37021] transition-all shadow-xs"
                 />
               </div>
 
               {/* Mobile Number */}
               <div>
-                <label htmlFor="user-phone" className="block text-xs sm:text-sm font-bold text-[var(--text-primary)] mb-1.5">
+                <label htmlFor="user-phone" className="block text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mb-1.5">
                   {t.eligibilityForm.phoneLabel} <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-xs sm:text-sm font-bold text-[var(--text-muted)]">
+                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-xs sm:text-sm font-bold text-slate-500">
                     +91
                   </div>
                   <input
@@ -140,10 +140,10 @@ export const EligibilityForm: React.FC = () => {
                     value={formData.phone}
                     onChange={handlePhoneChange}
                     placeholder={t.eligibilityForm.phonePlaceholder}
-                    className={`w-full pl-13 pr-4 py-3 rounded-xl bg-[var(--bg-elevated)] border text-[var(--text-primary)] placeholder-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 transition-all ${
+                    className={`w-full pl-13 pr-4 py-3 rounded-xl bg-white dark:bg-slate-900 border text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 transition-all shadow-xs ${
                       phoneError
                         ? "border-red-500 focus:ring-red-500"
-                        : "border-[var(--border-strong)] focus:ring-[var(--accent-saffron)]"
+                        : "border-slate-300 dark:border-slate-600 focus:ring-[#F37021]"
                     }`}
                   />
                 </div>
@@ -157,14 +157,14 @@ export const EligibilityForm: React.FC = () => {
 
               {/* Loan Category Dropdown */}
               <div>
-                <label htmlFor="user-loan-type" className="block text-xs sm:text-sm font-bold text-[var(--text-primary)] mb-1.5">
+                <label htmlFor="user-loan-type" className="block text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mb-1.5">
                   {t.eligibilityForm.loanTypeLabel} <span className="text-red-500">*</span>
                 </label>
                 <select
                   id="user-loan-type"
                   value={formData.loanType}
                   onChange={(e) => setFormData({ ...formData, loanType: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-strong)] text-[var(--text-primary)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-saffron)] transition-all cursor-pointer"
+                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#F37021] transition-all cursor-pointer shadow-xs"
                 >
                   {LOAN_ITEMS.map((loan) => (
                     <option key={loan.id} value={loan.nameEn}>
@@ -177,7 +177,7 @@ export const EligibilityForm: React.FC = () => {
               {/* 2-Column: Loan Amount & Monthly Income */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="user-amount" className="block text-xs sm:text-sm font-bold text-[var(--text-primary)] mb-1.5">
+                  <label htmlFor="user-amount" className="block text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mb-1.5">
                     {t.eligibilityForm.loanAmountLabel}
                   </label>
                   <input
@@ -186,12 +186,12 @@ export const EligibilityForm: React.FC = () => {
                     value={formData.loanAmount}
                     onChange={(e) => setFormData({ ...formData, loanAmount: e.target.value })}
                     placeholder={t.eligibilityForm.loanAmountPlaceholder}
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-strong)] text-[var(--text-primary)] placeholder-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-saffron)] transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#F37021] transition-all shadow-xs"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="user-income" className="block text-xs sm:text-sm font-bold text-[var(--text-primary)] mb-1.5">
+                  <label htmlFor="user-income" className="block text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mb-1.5">
                     {t.eligibilityForm.incomeLabel}
                   </label>
                   <input
@@ -200,14 +200,14 @@ export const EligibilityForm: React.FC = () => {
                     value={formData.monthlyIncome}
                     onChange={(e) => setFormData({ ...formData, monthlyIncome: e.target.value })}
                     placeholder={t.eligibilityForm.incomePlaceholder}
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-strong)] text-[var(--text-primary)] placeholder-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-saffron)] transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#F37021] transition-all shadow-xs"
                   />
                 </div>
               </div>
 
               {/* Location in Hyderabad */}
               <div>
-                <label htmlFor="user-location" className="block text-xs sm:text-sm font-bold text-[var(--text-primary)] mb-1.5">
+                <label htmlFor="user-location" className="block text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mb-1.5">
                   {t.eligibilityForm.areaLabel}
                 </label>
                 <input
@@ -216,18 +216,18 @@ export const EligibilityForm: React.FC = () => {
                   value={formData.locationArea}
                   onChange={(e) => setFormData({ ...formData, locationArea: e.target.value })}
                   placeholder={t.eligibilityForm.areaPlaceholder}
-                  className="w-full px-4 py-3 rounded-xl bg-[var(--bg-elevated)] border border-[var(--border-strong)] text-[var(--text-primary)] placeholder-[var(--text-muted)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-saffron)] transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#F37021] transition-all shadow-xs"
                 />
               </div>
 
-              {/* First Sourcing Preference (Readonly indicator) */}
+              {/* First Sourcing Preference */}
               <div>
-                <label className="block text-xs font-bold text-[var(--text-muted)] mb-1">
+                <label className="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1">
                   {t.eligibilityForm.preferredBankLabel}
                 </label>
-                <div className="px-4 py-2.5 rounded-xl bg-[var(--brand-teal-subtle)] border border-[var(--brand-teal-light)]/30 text-xs sm:text-sm font-bold text-[var(--brand-teal)] dark:text-sky-300 flex items-center justify-between">
-                  <span>⭐ {t.eligibilityForm.preferredBankVal}</span>
-                  <span className="text-xs font-semibold opacity-75">Habsiguda Desk</span>
+                <div className="px-4 py-2.5 rounded-xl bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-900/60 text-xs sm:text-sm font-bold text-[#851A1D] dark:text-amber-300 flex items-center justify-between">
+                  <span>🏛️ {t.eligibilityForm.preferredBankVal}</span>
+                  <span className="text-xs font-semibold opacity-80">Habsiguda Hub (0492)</span>
                 </div>
               </div>
 
@@ -244,7 +244,7 @@ export const EligibilityForm: React.FC = () => {
               </button>
 
               {submitted && (
-                <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 text-xs text-center font-semibold">
+                <div className="p-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-300 text-xs text-center font-bold">
                   ✓ Opening WhatsApp with your prefilled details...
                 </div>
               )}

@@ -24,28 +24,41 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full shadow-lg">
-      {/* 1. Official ICICI Bank Top Notification & Security Bar */}
-      <div className="bg-[#621013] text-white text-[11px] py-1.5 px-4 border-b border-white/10 font-medium">
+    <header className="sticky top-0 z-40 w-full shadow-md bg-white">
+      {/* 1. Official Bank Segment & Support Utility Bar */}
+      <div className="bg-[#4D0D10] text-white text-[11px] py-1 px-4 border-b border-white/10 font-medium">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2 truncate">
-            <span className="px-2 py-0.5 rounded bg-[#F37021] text-[9px] font-black uppercase tracking-wider text-white shadow-xs">
-              OFFICIAL SOURCING
+          <div className="flex items-center gap-3 truncate">
+            <span className="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#F37021] text-[9px] font-black uppercase tracking-wider text-white shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+              AUTHORIZED SOURCING
             </span>
-            <span className="truncate">
-              🏛️ <strong>ICICI Bank Retail Asset Hub (Habsiguda Branch Code: 0492)</strong> • Partner Code: <span className="font-mono text-[#FFB020] font-bold">CP-HBG-04921</span> • Special Home Loan ROI @ <strong>8.35%* p.a.</strong>
-            </span>
+            <div className="flex items-center gap-2 text-white/90 text-[10px] sm:text-[11px] font-semibold truncate">
+              <span>🏛️ <strong>ICICI Bank Retail Asset Hub (Habsiguda Hub Code: 0492)</strong></span>
+              <span className="hidden md:inline text-white/40">•</span>
+              <span className="hidden md:inline">Partner Code: <strong className="font-mono text-amber-300">CP-HBG-04921</strong></span>
+              <span className="hidden lg:inline text-white/40">•</span>
+              <span className="hidden lg:inline text-emerald-300">Home Loan ROI @ <strong>8.35%* p.a.</strong></span>
+            </div>
           </div>
-          <div className="hidden sm:flex items-center gap-3 shrink-0 text-[10px] text-white/80">
-            <span>📞 Direct Desk: <strong>+91 6302690251</strong></span>
-            <span>•</span>
-            <span>Working Hours: <strong>9:30 AM – 7:30 PM</strong></span>
+          
+          <div className="flex items-center gap-3 shrink-0 text-[10px] text-white/90">
+            <a
+              href="tel:6302690251"
+              className="flex items-center gap-1 hover:text-amber-300 transition-colors"
+              aria-label="Direct Desk Phone"
+            >
+              <span>📞 Direct Desk:</span>
+              <strong className="text-white">+91 63026 90251</strong>
+            </a>
+            <span className="text-white/40 hidden sm:inline">•</span>
+            <span className="hidden sm:inline text-white/75">Mon–Sat: 9:30 AM – 7:30 PM</span>
           </div>
         </div>
       </div>
 
       {/* 2. Main ICICI Bank Brand Navigation Header */}
-      <div className="w-full bg-[#851A1D] border-b-2 border-[#F37021] text-white transition-colors">
+      <div className="w-full bg-gradient-to-r from-[#621013] via-[#851A1D] to-[#621013] border-b-2 border-[#F37021] text-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
           {/* Official ICICI Bank Loan Desk Brand Emblem */}
@@ -54,7 +67,7 @@ export const Header: React.FC = () => {
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="ICICI Bank Loan Connector - Habsiguda"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#F37021] via-[#E05A10] to-[#851A1D] text-white flex items-center justify-center font-black text-2xl shadow-md border border-white/30 transform group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#F37021] via-[#E05A10] to-[#851A1D] text-white flex items-center justify-center font-black text-2xl shadow-md border border-white/30 transform group-hover:scale-105 transition-transform shrink-0">
               i
             </div>
             <div className="flex flex-col">
@@ -63,14 +76,14 @@ export const Header: React.FC = () => {
                   ICICI Bank
                 </span>
                 <span className="px-2 py-0.5 rounded text-[10px] font-black bg-[#F37021] text-white uppercase tracking-wider shadow-xs">
-                  Loans
+                  LOAN DESK
                 </span>
               </div>
               <span className="text-xs font-semibold text-amber-200/90 flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
                 {lang === "te"
                   ? "అధికారిక లోన్ కనెక్టర్ • హబ్సిగూడ డెస్క్ (0492)"
-                  : "Authorized Loan Connector Desk • Habsiguda Hub"}
+                  : "Authorized Retail Asset Sourcing Hub • Habsiguda (0492)"}
               </span>
             </div>
           </Link>
@@ -94,7 +107,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={toggleLang}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-white/15 hover:bg-white/25 border border-white/20 text-white transition-all cursor-pointer shadow-xs"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-white/15 hover:bg-white/25 border border-white/20 text-white transition-all cursor-pointer shadow-xs"
               aria-label={`Switch to ${lang === "en" ? "Telugu" : "English"}`}
               title={`Switch to ${lang === "en" ? "Telugu" : "English"}`}
             >
@@ -102,21 +115,10 @@ export const Header: React.FC = () => {
               <span>{t.nav.switchLang}</span>
             </button>
 
-            {/* Theme Switcher */}
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="p-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 text-white text-xs cursor-pointer shadow-xs"
-              aria-label={t.nav.toggleTheme}
-              title={t.nav.toggleTheme}
-            >
-              {theme === "dark" ? "☀️" : "🌙"}
-            </button>
-
             {/* Direct Call Button (Desktop) */}
             <a
               href={`tel:${siteConfig.phone}`}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#621013] hover:bg-[#500c0e] text-white border border-white/15 shadow-sm transition-all hover:-translate-y-0.5"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#4D0D10] hover:bg-[#3D0A0C] text-white border border-white/20 shadow-xs transition-all hover:-translate-y-0.5"
               aria-label={`Call ${siteConfig.displayPhone}`}
             >
               <span>📞</span>
@@ -139,29 +141,12 @@ export const Header: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg text-white bg-white/15 hover:bg-white/25 border border-white/20 focus:outline-none"
               aria-label="Toggle navigation menu"
-              aria-expanded={mobileMenuOpen}
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
