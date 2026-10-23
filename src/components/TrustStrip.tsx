@@ -51,7 +51,7 @@ export const TrustStrip: React.FC = () => {
               className="bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700/80 rounded-xl p-4 sm:p-5 shadow-xs hover:shadow-md hover:border-[#F37021] transition-all flex flex-col justify-between group"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-800 text-[#851A1D] dark:text-[#F37021] flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-800 text-[#851A1D] dark:text-[#F37021] flex items-center justify-center text-xl shrink-0">
                   {item.icon}
                 </div>
                 <div>

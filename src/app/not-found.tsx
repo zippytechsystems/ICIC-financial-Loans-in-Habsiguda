@@ -38,7 +38,7 @@ export default function NotFound() {
         <div className="pt-2">
           <Link
             href="/"
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-[#F37021] to-[#D8580E] text-white font-extrabold text-sm block shadow-md hover:scale-102 transition-all"
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-[#F37021] to-[#D8580E] text-white font-extrabold text-sm block shadow-md transition-colors"
           >
             Go to Homepage Now →
           </Link>

@@ -173,20 +173,9 @@ a, button, input, select {
   background: var(--accent-saffron);
 }
 
-/* Pulse animation for floating actions and status badges */
-@keyframes soft-pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
-  }
-  50% {
-    transform: scale(1.04);
-    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
-  }
-}
-
+/* Static smooth styling for actions (no disturbing continuous pulsing) */
 .animate-whatsapp-pulse {
-  animation: soft-pulse 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  /* Kept static and calm as per user request to eliminate distracting motion */
 }
 
 /* ==========================================================================

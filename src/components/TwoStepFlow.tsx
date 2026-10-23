@@ -31,7 +31,7 @@ export const TwoStepFlow: React.FC = () => {
                 <span className="text-xs font-black uppercase tracking-wider bg-[#F37021] text-white px-3 py-1 rounded-md shadow-xs">
                   {t.twoStepFlow.step1Tag}
                 </span>
-                <span className="text-3xl group-hover:scale-110 transition-transform">🔍</span>
+                <span className="text-3xl">🔍</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 {t.twoStepFlow.step1Title}
@@ -42,7 +42,7 @@ export const TwoStepFlow: React.FC = () => {
             </div>
             <a
               href="#eligibility"
-              className="inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold bg-[#F37021] hover:bg-[#D8580E] text-white transition-all shadow-xs"
+              className="inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold bg-[#F37021] hover:bg-[#D8580E] text-white transition-colors shadow-xs"
             >
               <span>{lang === "te" ? "ఎలిజిబిలిటీ ఫారం తెరవండి" : "Check Eligibility Online"}</span>
               <span>↓</span>
@@ -50,13 +50,13 @@ export const TwoStepFlow: React.FC = () => {
           </div>
 
           {/* Step 2 */}
-          <div className="bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-7 relative hover:border-[#851A1D] transition-all shadow-xs hover:shadow-md flex flex-col justify-between group">
+          <div className="bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-7 relative hover:border-[#851A1D] transition-colors shadow-xs hover:shadow-md flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-black uppercase tracking-wider bg-[#851A1D] text-white px-3 py-1 rounded-md shadow-xs">
                   {t.twoStepFlow.step2Tag}
                 </span>
-                <span className="text-3xl group-hover:scale-110 transition-transform">🏛️</span>
+                <span className="text-3xl">🏛️</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 {t.twoStepFlow.step2Title}

@@ -18,7 +18,7 @@ export const WhatsAppFab: React.FC = () => {
           href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappPrefillText)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 px-4 py-3.5 rounded-full bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-hover)] text-white shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 animate-whatsapp-pulse cursor-pointer border border-white/20"
+          className="flex items-center gap-3 px-4 py-3.5 rounded-full bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-hover)] text-white shadow-xl hover:shadow-2xl transition-colors cursor-pointer border border-white/20"
           aria-label="Chat on WhatsApp Business (+91 6302690251)"
         >
           <svg className="w-6 h-6 fill-current flex-shrink-0" viewBox="0 0 24 24">

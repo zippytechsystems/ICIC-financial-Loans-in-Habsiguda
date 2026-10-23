@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
           <div className="flex items-center gap-3 truncate">
             <span className="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#F37021] text-[9px] font-black uppercase tracking-wider text-white shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
               AUTHORIZED SOURCING
             </span>
             <div className="flex items-center gap-2 text-white/90 text-[10px] sm:text-[11px] font-semibold truncate">
@@ -65,7 +65,7 @@ export const Header: React.FC = () => {
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="ICICI Bank Loan Connector - Habsiguda"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#F37021] via-[#E05A10] to-[#851A1D] text-white flex items-center justify-center font-black text-2xl shadow-md border border-white/30 transform group-hover:scale-105 transition-transform shrink-0">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#F37021] via-[#E05A10] to-[#851A1D] text-white flex items-center justify-center font-black text-2xl shadow-md border border-white/30 shrink-0">
               i
             </div>
             <div className="flex flex-col">
@@ -78,7 +78,7 @@ export const Header: React.FC = () => {
                 </span>
               </div>
               <span className="text-xs font-semibold text-amber-200/90 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
                 {lang === "te"
                   ? "అధికారిక లోన్ కనెక్టర్ • హబ్సిగూడ డెస్క్ (0492)"
                   : "Authorized Retail Asset Sourcing Hub • Habsiguda (0492)"}
@@ -116,7 +116,7 @@ export const Header: React.FC = () => {
             {/* Direct Call Button (Desktop) */}
             <a
               href={`tel:${siteConfig.phone}`}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#4D0D10] hover:bg-[#3D0A0C] text-white border border-white/20 shadow-xs transition-all hover:-translate-y-0.5"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#4D0D10] hover:bg-[#3D0A0C] text-white border border-white/20 shadow-xs transition-colors"
               aria-label={`Call ${siteConfig.displayPhone}`}
             >
               <span>📞</span>
@@ -126,7 +126,7 @@ export const Header: React.FC = () => {
             {/* High-Converting Public Lead CTA Button */}
             <a
               href="#eligibility"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold bg-[#F37021] hover:bg-[#D8580E] text-white shadow-md transition-all hover:scale-102 cursor-pointer border border-white/20"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold bg-[#F37021] hover:bg-[#D8580E] text-white shadow-md transition-colors cursor-pointer border border-white/20"
               title="Check Loan Eligibility Online"
             >
               <span>⚡</span>

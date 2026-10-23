@@ -33,7 +33,7 @@ export const DocsPanel: React.FC = () => {
             className="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-[#F37021] transition-all shadow-xs group"
           >
             <div className="flex items-start gap-3">
-              <span className="text-xl flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">{doc.icon}</span>
+              <span className="text-xl flex-shrink-0 mt-0.5">{doc.icon}</span>
               <div>
                 <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-0.5">
                   {doc.title}

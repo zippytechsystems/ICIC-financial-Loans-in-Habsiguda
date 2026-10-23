@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
             
             {/* Top Pill / Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-[#851A1D]/10 text-[#851A1D] dark:text-[#F37021] border border-[#851A1D]/20 mb-4 w-fit shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#F37021] animate-ping"></span>
+              <span className="w-2 h-2 rounded-full bg-[#F37021]"></span>
               <span>🏛️ ICICI Bank Authorized Retail Asset Hub (Code: 0492)</span>
             </div>
 
@@ -42,19 +42,14 @@ export const Hero: React.FC = () => {
                 : "Doorstep loan processing for Home Loans, Loan Against Property (LAP), Business Loans & Personal Loans across Habsiguda, Uppal & East Hyderabad starting @ 8.35%* p.a."}
             </p>
 
-            {/* Exact Flyer Telugu Quotes Banner (Rendered as Crisp Native Text) */}
-            <div className="bg-[#FFFBEB] dark:bg-slate-800/90 border-l-4 border-[#F37021] border-y border-r border-amber-200 dark:border-slate-700 rounded-r-xl p-4 sm:p-5 mb-6 shadow-xs">
-              <div className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">💡</span>
-                <div>
-                  <p className="font-telugu font-bold text-base sm:text-lg text-[#851A1D] dark:text-amber-300 leading-snug">
-                    &ldquo;మీ Profile & Eligibility ఆధారంగా సరైన bank/loan option ఎంచుకోండి.&rdquo;
-                  </p>
-                  <p className="font-telugu text-xs sm:text-sm text-amber-950 dark:text-amber-200 mt-1 leading-normal font-semibold">
-                    ఒకే చోట ICICI బ్యాంక్ మరియు ఇతర ప్రముఖ బ్యాంకుల ద్వారా లోన్ సదుపాయం.
-                  </p>
-                </div>
-              </div>
+            {/* Official Bank Sourcing Guidance Note (Clean, calm, native text) */}
+            <div className="bg-slate-50 dark:bg-slate-800/80 border-l-4 border-[#851A1D] rounded-r-xl p-3.5 sm:p-4 mb-6 border border-slate-200 dark:border-slate-700 shadow-xs">
+              <p className="font-telugu font-bold text-sm sm:text-base text-[#851A1D] dark:text-[#F37021] leading-snug">
+                &ldquo;మీ Profile & Eligibility ఆధారంగా సరైన bank/loan option ఎంచుకోండి.&rdquo;
+              </p>
+              <p className="font-telugu text-xs text-slate-600 dark:text-slate-300 mt-1 font-semibold">
+                ఒకే చోట ICICI బ్యాంక్ మరియు ఇతర ప్రముఖ బ్యాంకుల ద్వారా లోన్ సదుపాయం.
+              </p>
             </div>
 
             {/* Live Benchmark ROI Chips */}
@@ -101,7 +96,7 @@ export const Hero: React.FC = () => {
                 href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappPrefillText)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-bold bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-hover)] text-white shadow-md hover:shadow-lg transition-all text-center animate-whatsapp-pulse cursor-pointer"
+                className="flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-base font-bold bg-[var(--whatsapp-green)] hover:bg-[var(--whatsapp-hover)] text-white shadow-md hover:shadow-lg transition-colors text-center cursor-pointer"
                 aria-label="Check eligibility on WhatsApp at +91 6302690251"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

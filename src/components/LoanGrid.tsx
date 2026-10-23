@@ -95,12 +95,12 @@ export const LoanGrid: React.FC = () => {
             <div
               key={loan.id}
               onClick={() => setSelectedLoan(loan)}
-              className="bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-xs hover:shadow-lg hover:-translate-y-1 hover:border-[#F37021] transition-all group cursor-pointer"
+              className="bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-[#F37021] transition-colors group cursor-pointer"
             >
               <div>
                 {/* Card Top: Icon & Badge */}
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-800 text-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-950/60 border border-orange-200 dark:border-orange-800 text-2xl flex items-center justify-center">
                     {loan.icon}
                   </div>
                   <div className="flex items-center gap-1.5">

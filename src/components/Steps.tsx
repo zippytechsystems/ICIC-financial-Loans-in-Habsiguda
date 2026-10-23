@@ -55,14 +55,14 @@ export const Steps: React.FC = () => {
           {stepItems.map((step, idx) => (
             <div
               key={idx}
-              className="relative p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 hover:border-[#F37021] transition-all flex flex-col justify-between group hover:-translate-y-1 shadow-xs hover:shadow-md"
+              className="relative p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 hover:border-[#F37021] transition-colors flex flex-col justify-between group shadow-xs hover:shadow-md"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#851A1D] to-[#621013] text-white font-extrabold text-sm flex items-center justify-center shadow-xs">
                     {step.num}
                   </span>
-                  <span className="text-2xl group-hover:scale-110 transition-transform">
+                  <span className="text-2xl">
                     {step.icon}
                   </span>
                 </div>

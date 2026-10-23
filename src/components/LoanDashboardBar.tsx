@@ -32,51 +32,12 @@ export const LoanDashboardBar: React.FC = () => {
     }, 500);
   };
 
-  const quickLoans = [
-    {
-      id: "home",
-      icon: "🏠",
-      title: "Home Loans",
-      titleTe: "హోమ్ లోన్స్",
-      roi: "8.35%*",
-      badge: "Repo Linked",
-      link: "#loans",
-    },
-    {
-      id: "lap",
-      icon: "🏢",
-      title: "Property Loan (LAP)",
-      titleTe: "ప్రాపర్టీ లోన్ (LAP)",
-      roi: "9.25%*",
-      badge: "Up to 65% LTV",
-      link: "#loans",
-    },
-    {
-      id: "msme",
-      icon: "💼",
-      title: "Business & MSME",
-      titleTe: "బిజినెస్ & MSME",
-      roi: "11.25%*",
-      badge: "Collateral Free",
-      link: "#loans",
-    },
-    {
-      id: "personal",
-      icon: "⚡",
-      title: "Instant Personal",
-      titleTe: "పర్సనల్ లోన్",
-      roi: "10.65%*",
-      badge: "Fast Disbursal",
-      link: "#loans",
-    },
-  ];
-
   return (
     <div className="w-full bg-[#F8FAFC] dark:bg-[#1E293B] text-[var(--text-primary)] border-b border-slate-200 dark:border-slate-800 shadow-xs transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4">
         
         {/* Top Hub Indicator Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#851A1D] to-[#621013] text-white flex items-center justify-center font-bold text-xl shadow-xs shrink-0">
               🏛️
@@ -86,8 +47,8 @@ export const LoanDashboardBar: React.FC = () => {
                 <span className="font-extrabold text-sm sm:text-base tracking-tight text-[#851A1D] dark:text-[#F37021] uppercase font-serif">
                   ICICI Bank Retail Asset Hub • Direct Loan Sourcing Desk
                 </span>
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 shadow-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                   DESK ACTIVE
                 </span>
               </div>
@@ -100,45 +61,19 @@ export const LoanDashboardBar: React.FC = () => {
           <div className="flex items-center gap-2.5 self-start md:self-auto text-xs">
             <a
               href="#calculator"
-              className="px-3 py-1.5 rounded-lg font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-[#851A1D] border border-slate-200 dark:border-slate-700 hover:border-[#851A1D] transition-all flex items-center gap-1.5 shadow-xs"
+              className="px-3 py-1.5 rounded-lg font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-[#851A1D] border border-slate-200 dark:border-slate-700 hover:border-[#851A1D] transition-colors flex items-center gap-1.5 shadow-xs"
             >
               <span>🧮</span>
               <span>EMI Calculator</span>
             </a>
             <a
               href="#eligibility"
-              className="px-3.5 py-1.5 rounded-lg font-bold bg-[#F37021] hover:bg-[#D8580E] text-white transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg font-bold bg-[#F37021] hover:bg-[#D8580E] text-white transition-colors shadow-xs flex items-center gap-1.5 cursor-pointer"
             >
               <span>⚡</span>
               <span>Instant Eligibility</span>
             </a>
           </div>
-        </div>
-
-        {/* Loan Product Benchmark Rate Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-4">
-          {quickLoans.map((loan) => (
-            <a
-              key={loan.id}
-              href={loan.link}
-              className="group bg-white dark:bg-slate-800/80 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-700/80 hover:border-[#F37021] rounded-xl p-3 sm:p-3.5 transition-all flex items-center justify-between shadow-xs hover:shadow-md"
-            >
-              <div className="flex items-center gap-2.5">
-                <span className="text-2xl group-hover:scale-110 transition-transform">{loan.icon}</span>
-                <div>
-                  <div className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-[#851A1D] dark:group-hover:text-[#F37021] transition-colors">
-                    {lang === "te" ? loan.titleTe : loan.title}
-                  </div>
-                  <div className="text-[11px] text-[#851A1D] dark:text-amber-300 font-extrabold">
-                    ROI from {loan.roi}
-                  </div>
-                </div>
-              </div>
-              <span className="hidden sm:inline-block text-[9px] font-bold px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/60 text-[#851A1D] dark:text-amber-300 border border-amber-200 dark:border-amber-800">
-                {loan.badge}
-              </span>
-            </a>
-          ))}
         </div>
 
         {/* Quick Application / Lead Status Tracker Accordion */}
