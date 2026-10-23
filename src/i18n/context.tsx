@@ -29,8 +29,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     try {
       const saved = localStorage.getItem("habsiguda_lang") as Language;
       if (saved === "en" || saved === "te") {
-        setLangState(saved);
         document.documentElement.lang = saved;
+        queueMicrotask(() => {
+          setLangState(saved);
+        });
       } else {
         document.documentElement.lang = "en";
       }

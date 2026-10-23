@@ -2,18 +2,19 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { siteConfig } from "../config/site";
 
 export default function NotFound() {
+  const router = useRouter();
+
   useEffect(() => {
     // Graceful automatic redirect to home page after 3 seconds
     const timer = setTimeout(() => {
-      if (typeof window !== "undefined") {
-        window.location.href = "/";
-      }
+      router.push("/");
     }, 3000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [router]);
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#061118] text-[#0F172A] dark:text-[#F8FAFC] flex items-center justify-center p-4">

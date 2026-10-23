@@ -4,7 +4,7 @@ import React from "react";
 import { useLanguage } from "../i18n/context";
 
 export const TrustStrip: React.FC = () => {
-  const { lang, t } = useLanguage();
+  const { lang } = useLanguage();
 
   const trustCards = [
     {

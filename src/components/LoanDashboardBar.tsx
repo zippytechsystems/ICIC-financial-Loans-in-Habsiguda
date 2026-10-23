@@ -5,7 +5,7 @@ import { siteConfig } from "../config/site";
 import { useLanguage } from "../i18n/context";
 
 export const LoanDashboardBar: React.FC = () => {
-  const { lang, t } = useLanguage();
+  const { lang } = useLanguage();
   const [trackPhone, setTrackPhone] = useState("");
   const [trackResult, setTrackResult] = useState<{
     found: boolean;

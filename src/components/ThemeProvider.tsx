@@ -25,11 +25,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     try {
       const stored = localStorage.getItem("habsiguda_theme") as Theme | null;
       if (stored === "dark") {
-        setThemeState("dark");
         document.documentElement.classList.add("dark");
+        queueMicrotask(() => {
+          setThemeState("dark");
+        });
       } else {
         // Default to Official Clean Light Banking Canvas
-        setThemeState("light");
         document.documentElement.classList.remove("dark");
         localStorage.setItem("habsiguda_theme", "light");
       }

@@ -4,11 +4,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "../config/site";
 import { useLanguage } from "../i18n/context";
-import { useTheme } from "./ThemeProvider";
 
 export const Header: React.FC = () => {
   const { lang, toggleLang, t } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
